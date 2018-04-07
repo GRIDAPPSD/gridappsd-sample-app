@@ -30,6 +30,12 @@ def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_en
     except:
         print ("Not connected to GOSS - messages will not be logged on the platform")
 
+    def send_log_msg(msg):
+        logMsg['logMessage'] = msg
+        logMsgStr = json.dumps(logMsg)
+        gossConnection.send(body=logMsgStr, destination=goss_log,
+                            headers={'reply-to': "/temp-queue/response-queue"})
+
     logMsg = {
         # 'id': 401,
         'source': 'rule',
@@ -45,10 +51,10 @@ def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_en
     testInput = ruleset(topic)
 
     shunt_dict = defaultdict(lambda: {'count':0})
-    shunt_threshold = 3
+    shunt_threshold = 1
 
     switch_dict = defaultdict(lambda: {'count':0})
-    switch_threshold = 3
+    switch_threshold = 1
 
     base_kv = 12470 / 3
 
@@ -65,35 +71,25 @@ def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_en
             volt_pu = (math.sqrt(c_temp.real**2 + c_temp.imag**2) / (base_kv) ) / math.sqrt(3)
             if volt_pu < .95 or volt_pu > 1.05:
                 print "Voltage out of threshold " + str(volt_pu) + " at " + c.m.message.timestamp
+                send_log_msg("Voltage out of threshold " + str(volt_pu) + " at " + c.m.message.timestamp)
+
 
         # A Reverse and a Forward difference is a state change.
         @when_all((m.message.reverse_difference.attribute == 'Switch.open') & (
         m.message.reverse_difference.attribute == 'Switch.open'))
         def switch_open(c):
             # consequent
-            # print('approved {0}'.format(c.m))
-            # print 'Switch id {0}'.format(c.m.message.difference_mrid)
             c.post({'mrid': c.m.message.difference_mrid,
                     'action': c.m.message.reverse_difference.attribute,
                     'timestamp': c.m.message.timestamp})
 
         @when_all(+m.mrid)
         def count_switch(c):
-            # print (c)
             switch_dict[c.m.mrid]['count']+=1
             if switch_dict[c.m.mrid]['count'] == switch_threshold:
                 print ("For Posting: 3 changes at different times at the same switch.")
-                for f in c.m:
-                    print ('Count MRID Fact: {0} '.format(f))
+                send_log_msg(str(switch_threshold) + " changes at different times at the same switch.")
 
-                file = open('testfile.txt', 'w')
-                for f in c.m:
-                    file.write('Count MRID Fact: {0} '.format(f))
-                file.close()
-                logMsg['logMessage'] = str(switch_threshold) + " changes at different times at the same switch."
-                logMsgStr = json.dumps(logMsg)
-                gossConnection.send(body=logMsgStr, destination=goss_log,
-                                    headers={'reply-to': "/temp-queue/response-queue"})
 
         # A Reverse and a Forward difference is a state change.
         @when_all((m.message.reverse_differences.allItems(item.attribute == 'ShuntCompensator.sections')) & (
@@ -101,7 +97,6 @@ def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_en
         def shunt_change(c):
             # consequent
             # print ('Shunt' + c.m.message.reverse_differences[0])
-            # the_date = dateutil.parser.parse(c.m.message.timestamp)
             for i,f in enumerate(c.m.message.reverse_differences):
                 print ('Count shunt changes: {0} '.format(f))
                 c.post({
@@ -115,11 +110,8 @@ def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_en
             # print (c)
             shunt_dict[c.m.shunt_object]['count']+=1
             if shunt_dict[c.m.shunt_object]['count'] == shunt_threshold:
-                print ('Shunt change threshold exceeded for shunt object' + c.m.shunt_object)
-                logMsg['logMessage'] = 'Shunt change threshold exceeded for shunt object' + c.m.shunt_object
-                logMsgStr = json.dumps(logMsg)
-                gossConnection.send(body=logMsgStr, destination=goss_log,
-                                    headers={'reply-to': "/temp-queue/response-queue"})
+                print ('Shunt change threshold exceeded for shunt object ' + c.m.shunt_object)
+                send_log_msg('Shunt change threshold exceeded for shunt object ' + c.m.shunt_object)
 
 
         @when_start

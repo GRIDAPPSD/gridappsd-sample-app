@@ -1,7 +1,7 @@
  {
-	"name": "Sample_App",
+	"name": "sample_app",
 	"test_configuration": "./SampleTestConfig.json",
-	"application": "Sample_App",
+	"application": "sample_app",
 	"outputs":
    		 {"substation_link": ["xf_hvmv_sub"],
    		  "regulator_list": ["reg_FEEDER_REG", "reg_VREG2", "reg_VREG3", "reg_VREG4"],
