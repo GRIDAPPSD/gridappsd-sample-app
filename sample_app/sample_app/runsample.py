@@ -140,6 +140,8 @@ def get_opts():
 
     parser.add_argument("simulation_id",
                         help="Simulation id to use for responses on the message bus.")
+    parser.add_argument("request",
+                        help="Simulation Request")
     parser.add_argument("-u", "--user", default="system",
                         help="The username to authenticate with the message bus.")
     parser.add_argument("-p", "--password", default="manager",
@@ -224,8 +226,11 @@ def _main():
     opts = get_opts()
 
     listening_to_topic = fncs_output_topic(opts.simulation_id)
-
-    _8500_mird = "_4F76A5F9-271D-9EB8-5E31-AA362D86F2C3"
+    
+    #print(opts.request)
+    sim_request = json.loads(opts.request.replace("\'",""))
+    _8500_mird = sim_request["power_system_config"]["Line_name"]
+    #_8500_mird = "_4F76A5F9-271D-9EB8-5E31-AA362D86F2C3"
     gapps = GridAPPSD(opts.simulation_id)
     # diff = Difference(opts.simulation_id)
     #
