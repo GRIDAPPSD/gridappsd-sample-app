@@ -8,8 +8,8 @@ import json
 import math
 
 from gridappsd import GOSS
-goss = GOSS()
-goss.connect()
+# goss = GOSS()
+# goss.connect()
 
 goss_log = 'goss.gridappsd.platform.log'
 responseQueueTopic = '/temp-queue/response-queue'
@@ -47,8 +47,8 @@ def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_en
         logMsg['timestamp'] = int(time.mktime(t_now.timetuple()) * 1000) + t_now.microsecond
         print logMsg['timestamp']
         logMsgStr = json.dumps(logMsg)
-        print gossConnection.send(body=logMsgStr, destination=goss_log,
-                            headers={'reply-to':responseQueueTopic})
+        # gossConnection.send(body=logMsgStr, destination=goss_log,
+        #                     headers={'reply-to':responseQueueTopic})
         goss.send(body=logMsgStr, destination=goss_log)
 
     logMsg = {
@@ -86,13 +86,13 @@ def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_en
         ## Get start and end from TestConfig
 
         # Check a certain mrid's measurement Voltage P.U.
-        #u'PowerTransformer_hvmv_sub_Voltage
-        transformer_voltages = ['b74b5d31-158e-49a7-8f92-3042598cfd66',
-                             '95ca5999-6b99-49cd-b6bb-9468cfd66680',
-                             '6ac54b7c-3eff-4e0c-8a84-53ceedeb5188']
-        transformer_voltages = {u'6ac54b7c-3eff-4e0c-8a84-53ceedeb5188': u'PowerTransformer_hvmv_sub_Voltage_C',
-         u'95ca5999-6b99-49cd-b6bb-9468cfd66680': u'PowerTransformer_hvmv_sub_Voltage_B',
-         u'b74b5d31-158e-49a7-8f92-3042598cfd66': u'PowerTransformer_hvmv_sub_Voltage_A'}
+        # PowerTransformer_hvmv_sub_Voltage mrids
+        transformer_voltages = {u'2ff0d11e-0bfc-4ecd-9e3b-066d82aa3eb0': u'PowerTransformer_hvmv_sub_Voltage_B',
+                                u'ea135534-2a95-4d0a-bc59-9af9140b0367': u'PowerTransformer_hvmv_sub_Voltage_C',
+                                u'f98c9731-ca00-4372-bf41-48b5d39a0795': u'PowerTransformer_hvmv_sub_Voltage_A'}
+        transformer_voltages = {u'_11e4ede6-0dbf-494a-9950-e71058dfc599': u'PowerTransformer_hvmv_sub_Voltage_B',
+                                u'_709c9f09-87ea-4027-969b-41050b6ef8fe': u'PowerTransformer_hvmv_sub_Voltage_A',
+                                u'_f7412f91-4ae7-4adc-8442-47756decd6f8': u'PowerTransformer_hvmv_sub_Voltage_C'}
 
         @when_all(+m.message.measurements)
         def node_meas_check3(c):
@@ -135,13 +135,13 @@ def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_en
         #         send_log_msg("Voltage out of threshold " + str(volt_pu) + " at " + c.m.message.timestamp)
 
         # A Reverse and a Forward difference is a state change.
-        @when_all((m.message.reverse_difference.attribute == 'Switch.open') & (
-        m.message.reverse_difference.attribute == 'Switch.open'))
-        def switch_open(c):
-            # consequent
-            c.post({'mrid': c.m.message.difference_mrid,
-                    'action': c.m.message.reverse_difference.attribute,
-                    'timestamp': c.m.message.timestamp})
+        # @when_all((m.message.reverse_difference.attribute == 'Switch.open') & (
+        # m.message.reverse_difference.attribute == 'Switch.open'))
+        # def switch_open(c):
+        #     # consequent
+        #     c.post({'mrid': c.m.message.difference_mrid,
+        #             'action': c.m.message.reverse_difference.attribute,
+        #             'timestamp': c.m.message.timestamp})
 
         @when_all(+m.mrid)
         def count_switch(c):
@@ -150,24 +150,22 @@ def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_en
                 print ("For Posting: 3 changes at different times at the same switch.")
                 send_log_msg(str(switch_threshold) + " changes at different times at the same switch.")
 
-
         # A Reverse and a Forward difference is a state change.
         @when_all((m.message.reverse_differences.allItems(item.attribute == 'ShuntCompensator.sections')) & (
-        m.message.reverse_differences.allItems(item.attribute == 'ShuntCompensator.sections')))
+        m.message.forward_differences.allItems(item.attribute == 'ShuntCompensator.sections')))
         def shunt_change(c):
             # consequent
-            # print ('Shunt' + c.m.message.reverse_differences[0])
+            print ('Shunt' + str(c.m.message.reverse_differences[0]))
             for i,f in enumerate(c.m.message.reverse_differences):
                 print ('Count shunt changes: {0} '.format(f))
                 c.post({
                         # 'shunt_object': c.m.message.difference_mrid,
-                        'shunt_object' : f['object'],
+                        'shunt_object': f['object'],
                         'action': f['attribute'],
                         'timestamp': c.m.message.timestamp})
 
         @when_all(+m.shunt_object)
         def count_shunt_object(c):
-            # print (c)
             shunt_dict[c.m.shunt_object]['count']+=1
             if shunt_dict[c.m.shunt_object]['count'] == shunt_threshold:
                 print ('Shunt change threshold exceeded for shunt object ' + c.m.shunt_object)
@@ -178,20 +176,23 @@ def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_en
         def start(host):
             print('Topic', topic)
 
-            host.assert_fact(topic, {'mrid': 1, 'time':1})
-            host.assert_fact(topic, {'mrid': 1, 'time':2})
-            host.assert_fact(topic, {'mrid': 2, 'time':2})
-            host.assert_fact(topic, {'mrid': 1, 'time':3})
+            # host.assert_fact(topic, {'mrid': 1, 'time':1})
+            # host.assert_fact(topic, {'mrid': 1, 'time':2})
+            # host.assert_fact(topic, {'mrid': 2, 'time':2})
+            # host.assert_fact(topic, {'mrid': 1, 'time':3})
+            #
+            # host.post(topic, {'mrid': 1234, 'time': 1})
+            # host.post(topic, {'mrid': 1234, 'time': 1})
+            # host.post(topic, {'mrid': 1234, 'time': 1})
 
-            host.post(topic, {'mrid': 1234, 'time': 1})
-            host.post(topic, {'mrid': 1234, 'time': 1})
-            host.post(topic, {'mrid': 1234, 'time': 1})
+            # host.post(topic, {'shunt_object': '12345', 'time': 1})
+            # host.post(topic, {'shunt_object': '12345', 'time': 1})
             meas1 = {
                 "simulation_id" : "12ae2345",
                 "message" : {
                     "timestamp" : "2018-01-08T13:27:00.000Z",
                     "measurements" : [{
-                        "measurement_mrid" : "b74b5d31-158e-49a7-8f92-3042598cfd66",
+                        "measurement_mrid" : "f98c9731-ca00-4372-bf41-48b5d39a0795",
                         "magnitude" : 1960.512425,
                         "angle" : 6912.904192
                     }]
@@ -202,7 +203,7 @@ def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_en
                 "message" : {
                     "timestamp" : "2018-01-08T13:27:00.000Z",
                     "measurements" : [{
-                        "measurement_mrid" : "b74b5d31-158e-49a7-8f92-3042598cfd66",
+                        "measurement_mrid" : "f98c9731-ca00-4372-bf41-48b5d39a0795",
                         "magnitude" : 4154.196028,
                         "angle" : -4422.093355
                     }]
@@ -210,6 +211,49 @@ def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_en
             }
             host.post(topic, meas1)
             host.post(topic, meas2)
+            diff = {"message": {"timestamp": "2018-05-21 21:05:01.964577+00:00", "reverse_differences": [
+                {"attribute": "ShuntCompensator.sections", "object": "_A5866105-A527-F682-C982-69807C0E088B",
+                 "value": 0},
+                {"attribute": "ShuntCompensator.sections", "object": "_614B787E-649F-6FFE-EA99-9260674DA020",
+                 "value": 0},
+                {"attribute": "ShuntCompensator.sections", "object": "_55A8A692-8286-60F4-3B55-E493AB7F5C14",
+                 "value": 0},
+                {"attribute": "ShuntCompensator.sections", "object": "_A1395901-50BC-8B13-8CD6-F01B03CC8F65",
+                 "value": 0},
+                {"attribute": "ShuntCompensator.sections", "object": "_890CCB37-5678-1B5D-9A6D-DE041407F004",
+                 "value": 0},
+                {"attribute": "ShuntCompensator.sections", "object": "_D188697C-E7E2-2433-B115-B5F5066C157A",
+                 "value": 0},
+                {"attribute": "ShuntCompensator.sections", "object": "_60028107-B79F-457E-B4F9-4FCCDD4725C7",
+                 "value": 0},
+                {"attribute": "ShuntCompensator.sections", "object": "_44FBB17E-ADB8-F044-7182-7FB9F10D438C",
+                 "value": 0},
+                {"attribute": "ShuntCompensator.sections", "object": "_04B2EB15-9590-4DB2-6983-A21D7973BC07",
+                 "value": 0},
+                {"attribute": "ShuntCompensator.sections", "object": "_9EA4D055-B7EF-F289-8485-9159C1867059",
+                 "value": 0}], "forward_differences": [
+                {"attribute": "ShuntCompensator.sections", "object": "_A5866105-A527-F682-C982-69807C0E088B",
+                 "value": 1},
+                {"attribute": "ShuntCompensator.sections", "object": "_614B787E-649F-6FFE-EA99-9260674DA020",
+                 "value": 1},
+                {"attribute": "ShuntCompensator.sections", "object": "_55A8A692-8286-60F4-3B55-E493AB7F5C14",
+                 "value": 1},
+                {"attribute": "ShuntCompensator.sections", "object": "_A1395901-50BC-8B13-8CD6-F01B03CC8F65",
+                 "value": 1},
+                {"attribute": "ShuntCompensator.sections", "object": "_890CCB37-5678-1B5D-9A6D-DE041407F004",
+                 "value": 1},
+                {"attribute": "ShuntCompensator.sections", "object": "_D188697C-E7E2-2433-B115-B5F5066C157A",
+                 "value": 1},
+                {"attribute": "ShuntCompensator.sections", "object": "_60028107-B79F-457E-B4F9-4FCCDD4725C7",
+                 "value": 1},
+                {"attribute": "ShuntCompensator.sections", "object": "_44FBB17E-ADB8-F044-7182-7FB9F10D438C",
+                 "value": 1},
+                {"attribute": "ShuntCompensator.sections", "object": "_04B2EB15-9590-4DB2-6983-A21D7973BC07",
+                 "value": 1},
+                {"attribute": "ShuntCompensator.sections", "object": "_9EA4D055-B7EF-F289-8485-9159C1867059",
+                 "value": 1}], "difference_mrid": "6ab63d3f-7f65-4dcf-a81f-f02b3cda5989"},
+                              "simulation_id": "1441855227"}
+            host.post(topic, diff)
 
             # host.post(topic, {"simulation_id": "12ae2345", "message": {"timestamp": "2018-01-08T13:27:00.000Z",
             #                                                      "difference_mrid": "123a456b-789c-012d-345e-678f901a235c",
@@ -248,7 +292,13 @@ def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_en
             # {"object": "E3CA4CD4-B0D4-9A83-3E2F-18AC5F1B55BA", "attribute": "ShuntCompensator.sections",
             #  "value": "1"}]}})
 
-    run_all(port=port)
+    # run_all(host_name='gridappsd-docker_redis_1',port=port)
+    import getpass
+    if getpass.getuser() == 'root': # Docker check
+        run_all([{'host': 'redis', 'port':6379}])
+    else:
+        run_all(port=port)
+
 
 if __name__ == '__main__':
     x = '{"run_start" : "2017-07-21 12:00:00", "run_end" : "2017-07-22 12:00:00"}'

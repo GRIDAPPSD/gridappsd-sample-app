@@ -17,16 +17,13 @@ logger_location = os.path.join(user_home, "var/log/" + logger_name + ".log")
 if not os.path.exists(os.path.dirname(logger_location)):
     os.makedirs(os.path.dirname(logger_location))
 
-read_topic = 'goss.gridappsd.simulation.output.'
+read_topic = '/topic/goss.gridappsd.simulation.output.'
+simulation_input_topic = '/topic/goss.gridappsd.simulation.input.'
 
 goss_connection = None
 is_initialized = False
 # Number
 simulation_id = None
-
-# This is currently what gridlabd will use for its object name.
-# TODO change to use concat of sim id and sim name.
-simulation_name = None
 
 hdlr = logging.FileHandler(logger_location)
 formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
@@ -61,9 +58,11 @@ class GOSSListener(object):
             # print str(msg)
             if 'output' not in json_msg or json_msg['output'] == None:
                 print 'Output is none'
-            output = yaml.safe_load(json_msg['output'])
-            # Ignore null output data. (Assumes initializing)
-            if output is None:
+                return
+            # output = yaml.safe_load(json_msg['output'])
+            output = json_msg['output']
+            # Ignore null output data or . (Assumes initializing)
+            if output is None or 'message' not in output:
                 return
 
             temp_meas = output['message']['measurements']
@@ -108,7 +107,42 @@ class GOSSListener(object):
         with open(self.raw_str_file, 'w') as outfile:
             json.dump(self.raw_str_data, outfile, sort_keys=True, indent=2)
 
+class GOSSListenerInput(object):
+    def __init__(self, t0):
+        self.t0 = t0
+
+    def on_message(self, headers, msg):
+        try:
+            logger.debug('received message input ' + str(msg[:200]))
+
+            json_msg = yaml.safe_load(str(msg))
+
+            # print str(msg)
+            if 'input' not in json_msg or json_msg['input'] == None:
+                print 'input is none'
+                return
+
+            output = json_msg['input']
+            # Ignore null output data or . (Assumes initializing)
+            if output is None or 'message' not in output:
+                return
+
+            r = requests.post("http://localhost:5000/input/events", json=output)
+            print ('Forward ' + str(output)[:500])
+            print r.status_code
+            print r.headers
+
+            print("the input is: {}".format(str(output)[:500]))
+
+        except Exception as e:
+            traceback.print_exc(file=sys.stdout)
+            logger.error(type(e))
+            logger.error(e.args)
+            logger.error('Error in command ' + str(e))
+
 goss_listener = GOSSListener(2)
+
+goss_listener_input = GOSSListenerInput(2)
 
 def _keep_alive():
     while 1:
@@ -120,7 +154,7 @@ def signal_handler(signal, frame):
     sys.exit(0)
 
 def _register_with_goss(username, password, gossServer='localhost',
-                      stompPort='61613', read_topic=read_topic):
+                      stompPort='61613', simID=''):
     """Register with the GOSS server broker and return.
 
     Function arguments:
@@ -141,10 +175,11 @@ def _register_with_goss(username, password, gossServer='localhost',
     goss = GOSS()
     goss.connect()
     print ('GOSS connected ' + str(goss.connected))
-    goss.subscribe(read_topic, goss_listener)
+    goss.subscribe(read_topic+simID, goss_listener)
+    goss.subscribe(simulation_input_topic+simID,goss_listener_input)
 
 def forward_sim_ouput(simID):
-    _register_with_goss('system','manager',gossServer='127.0.0.1',stompPort='61613',read_topic=read_topic+simID)
+    _register_with_goss('system','manager',gossServer='127.0.0.1',stompPort='61613',simID=simID)
     signal.signal(signal.SIGINT, signal_handler)
     _keep_alive()
 
