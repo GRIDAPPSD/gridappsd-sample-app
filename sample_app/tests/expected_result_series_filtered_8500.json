@@ -1,0 +1,4169 @@
+{
+    "expected_outputs": {
+        "11": {
+            "simulation_id": "1062097031", 
+            "message": {
+                "timestamp": "2018-05-18 17:07:36.608633", 
+                "measurements": [
+                    {
+                        "measurement_mrid": "_74653361-3b39-41af-8592-def0653ea623", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_8f100920-469e-45c1-b9c7-55c0d601b0e7", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_4cb1b7aa-7a19-49a0-9261-2d6dc340292d", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_5daba227-ee21-4266-b00c-76d693f5c436", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_652a49a1-96ea-48a2-9906-8c170abcba7f", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_6909db32-a7cb-41e6-8244-2f1250bdfe9e", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_ae7627a8-6078-4d98-b28e-4331e16d3260", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_f8305ddf-391c-4002-aea9-00160603c0c3", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_11f91eab-070c-43bd-bfde-330f538885fa", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_551a5188-4850-4979-ad18-6c30091e7b57", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_267646f2-b03e-458c-ae76-0730a9cbaaf1", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_c00e1902-cd87-4182-8367-c8f0ea97c552", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_0dcbe27c-471c-4604-8e5c-83bc52318258", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_42b7689a-0321-43ba-9d4a-0c257ccb23be", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_36df2d8b-2906-4c33-9f0d-1c42fefdda9f", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_3783e729-3328-4983-9db7-23f6befa3536", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_59f92d0d-7e9b-45dc-bf67-b17510fcc22a", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_a929c951-c185-4eb1-bdf7-010be27dedc6", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_bb1eda2e-c31d-4180-964a-3ab906b8d629", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_ca7585ec-e609-4eb8-b0ce-9f44dc42e918", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_577f7bfb-2fd4-43ba-897b-c5d750a70b0c", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_b6419656-0eb5-4c8c-8241-93af6952868d", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_453a4a6d-4b77-4ec1-ba0e-edb056ab1ac4", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_ee7c5fef-0c2d-4a1e-a073-e337dbe5b311", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_252ae76d-4b8c-4807-a004-6b4bdad75037", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_7e8634d7-6b47-4ea4-b3db-5186b187715a", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_0d9a6ca0-ed29-4f86-93f4-59e96dab0ad0", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_3e31c46c-b32f-4959-9a53-201c8408d9e9", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_719ed096-dc34-4bef-aaec-028986cfdc73", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_888bbda5-f93b-448d-999a-6f5aec86bf85", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_944fad4a-2541-44ff-8f88-0a5aa7a9d659", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_ec9d7b54-0513-4743-af0d-4e6eba7f6b69", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_bfcf524f-45ab-4556-9d14-295466cee5d8", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_cd75a1d7-f19f-4f85-8be1-6562eb87c8fd", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_0044477d-d23e-45ef-b010-627e63913d18", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_0356d089-f691-4468-abd8-398da2ffa06e", 
+                        "value": 0
+                    }, 
+                    {
+                        "magnitude": 1701355.0309791847, 
+                        "angle": 15.97580618393676, 
+                        "measurement_mrid": "_10db7f16-400b-4dc8-8f6c-1664931817aa"
+                    }, 
+                    {
+                        "magnitude": 1747537.7772528408, 
+                        "angle": 19.10083006679515, 
+                        "measurement_mrid": "_2e0d7858-974f-403e-8631-4da1235f30b5"
+                    }, 
+                    {
+                        "magnitude": 1701355.0309791847, 
+                        "angle": 15.97580618393676, 
+                        "measurement_mrid": "_4194433d-1813-49c8-b02d-6252a346b97c"
+                    }, 
+                    {
+                        "magnitude": 1747537.7772528408, 
+                        "angle": 19.10083006679515, 
+                        "measurement_mrid": "_6c41b9f1-8bbe-45ec-b5ad-f48ccada98c2"
+                    }, 
+                    {
+                        "magnitude": 1642863.4730487077, 
+                        "angle": 18.954788107616725, 
+                        "measurement_mrid": "_80b4ce92-af77-485c-a8eb-f242f574bc8a"
+                    }, 
+                    {
+                        "magnitude": 1642863.4730487077, 
+                        "angle": 18.954788107616725, 
+                        "measurement_mrid": "_f23418a5-db39-4509-9d80-754626773ad4"
+                    }, 
+                    {
+                        "measurement_mrid": "_2b832429-a785-4724-b109-e361efe97f05", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_5664c773-77df-47e6-9b40-2b7341723e63", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_6e50c5a6-bda1-476b-8fcf-7d672358c4ac", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_738fcb1a-8144-487b-a189-611f8f952e0c", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_ec56f22d-7eab-4d12-ad2b-9c2791019262", 
+                        "value": 6
+                    }, 
+                    {
+                        "measurement_mrid": "_f499bf6a-f8d7-425d-81cb-197bd4c881b2", 
+                        "value": 6
+                    }, 
+                    {
+                        "magnitude": 7171.741423530476, 
+                        "angle": -150.5109343891895, 
+                        "measurement_mrid": "_11e4ede6-0dbf-494a-9950-e71058dfc599"
+                    }, 
+                    {
+                        "magnitude": 7171.320823765899, 
+                        "angle": -30.530786296731815, 
+                        "measurement_mrid": "_709c9f09-87ea-4027-969b-41050b6ef8fe"
+                    }, 
+                    {
+                        "magnitude": 7175.501227325261, 
+                        "angle": 89.51523541778873, 
+                        "measurement_mrid": "_f7412f91-4ae7-4adc-8442-47756decd6f8"
+                    }, 
+                    {
+                        "measurement_mrid": "_78b11383-793e-40b8-afdc-2acb3f790218", 
+                        "value": 4
+                    }, 
+                    {
+                        "measurement_mrid": "_990c6ef2-801d-48be-8256-ec82e0cedb44", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_aea61d9e-9d77-49d6-91da-f14cfed81815", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_be28ddc6-eb3e-47bb-87c5-53d71b02a61c", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_cc49318c-0f92-4a12-9222-6aa6538736c0", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_d4fd34ed-53aa-411e-b74a-89f8972b5064", 
+                        "value": 4
+                    }
+                ]
+            }
+        }, 
+        "10": {
+            "simulation_id": "1062097031", 
+            "message": {
+                "timestamp": "2018-05-18 17:07:35.220852", 
+                "measurements": [
+                    {
+                        "measurement_mrid": "_74653361-3b39-41af-8592-def0653ea623", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_8f100920-469e-45c1-b9c7-55c0d601b0e7", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_4cb1b7aa-7a19-49a0-9261-2d6dc340292d", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_5daba227-ee21-4266-b00c-76d693f5c436", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_652a49a1-96ea-48a2-9906-8c170abcba7f", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_6909db32-a7cb-41e6-8244-2f1250bdfe9e", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_ae7627a8-6078-4d98-b28e-4331e16d3260", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_f8305ddf-391c-4002-aea9-00160603c0c3", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_11f91eab-070c-43bd-bfde-330f538885fa", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_551a5188-4850-4979-ad18-6c30091e7b57", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_267646f2-b03e-458c-ae76-0730a9cbaaf1", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_c00e1902-cd87-4182-8367-c8f0ea97c552", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_0dcbe27c-471c-4604-8e5c-83bc52318258", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_42b7689a-0321-43ba-9d4a-0c257ccb23be", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_36df2d8b-2906-4c33-9f0d-1c42fefdda9f", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_3783e729-3328-4983-9db7-23f6befa3536", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_59f92d0d-7e9b-45dc-bf67-b17510fcc22a", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_a929c951-c185-4eb1-bdf7-010be27dedc6", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_bb1eda2e-c31d-4180-964a-3ab906b8d629", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_ca7585ec-e609-4eb8-b0ce-9f44dc42e918", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_577f7bfb-2fd4-43ba-897b-c5d750a70b0c", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_b6419656-0eb5-4c8c-8241-93af6952868d", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_453a4a6d-4b77-4ec1-ba0e-edb056ab1ac4", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_ee7c5fef-0c2d-4a1e-a073-e337dbe5b311", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_252ae76d-4b8c-4807-a004-6b4bdad75037", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_7e8634d7-6b47-4ea4-b3db-5186b187715a", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_0d9a6ca0-ed29-4f86-93f4-59e96dab0ad0", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_3e31c46c-b32f-4959-9a53-201c8408d9e9", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_719ed096-dc34-4bef-aaec-028986cfdc73", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_888bbda5-f93b-448d-999a-6f5aec86bf85", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_944fad4a-2541-44ff-8f88-0a5aa7a9d659", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_ec9d7b54-0513-4743-af0d-4e6eba7f6b69", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_bfcf524f-45ab-4556-9d14-295466cee5d8", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_cd75a1d7-f19f-4f85-8be1-6562eb87c8fd", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_0044477d-d23e-45ef-b010-627e63913d18", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_0356d089-f691-4468-abd8-398da2ffa06e", 
+                        "value": 0
+                    }, 
+                    {
+                        "magnitude": 1700633.4766434499, 
+                        "angle": 15.903556824215393, 
+                        "measurement_mrid": "_10db7f16-400b-4dc8-8f6c-1664931817aa"
+                    }, 
+                    {
+                        "magnitude": 1747891.4615464518, 
+                        "angle": 19.007616889399923, 
+                        "measurement_mrid": "_2e0d7858-974f-403e-8631-4da1235f30b5"
+                    }, 
+                    {
+                        "magnitude": 1700633.4766434499, 
+                        "angle": 15.903556824215393, 
+                        "measurement_mrid": "_4194433d-1813-49c8-b02d-6252a346b97c"
+                    }, 
+                    {
+                        "magnitude": 1747891.4615464518, 
+                        "angle": 19.007616889399923, 
+                        "measurement_mrid": "_6c41b9f1-8bbe-45ec-b5ad-f48ccada98c2"
+                    }, 
+                    {
+                        "magnitude": 1643266.4378838576, 
+                        "angle": 18.904542699490058, 
+                        "measurement_mrid": "_80b4ce92-af77-485c-a8eb-f242f574bc8a"
+                    }, 
+                    {
+                        "magnitude": 1643266.4378838576, 
+                        "angle": 18.904542699490058, 
+                        "measurement_mrid": "_f23418a5-db39-4509-9d80-754626773ad4"
+                    }, 
+                    {
+                        "measurement_mrid": "_2b832429-a785-4724-b109-e361efe97f05", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_5664c773-77df-47e6-9b40-2b7341723e63", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_6e50c5a6-bda1-476b-8fcf-7d672358c4ac", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_738fcb1a-8144-487b-a189-611f8f952e0c", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_ec56f22d-7eab-4d12-ad2b-9c2791019262", 
+                        "value": 6
+                    }, 
+                    {
+                        "measurement_mrid": "_f499bf6a-f8d7-425d-81cb-197bd4c881b2", 
+                        "value": 6
+                    }, 
+                    {
+                        "magnitude": 7171.822930744589, 
+                        "angle": -150.51121179962692, 
+                        "measurement_mrid": "_11e4ede6-0dbf-494a-9950-e71058dfc599"
+                    }, 
+                    {
+                        "magnitude": 7171.4523492771805, 
+                        "angle": -30.531227666498403, 
+                        "measurement_mrid": "_709c9f09-87ea-4027-969b-41050b6ef8fe"
+                    }, 
+                    {
+                        "magnitude": 7175.528416838117, 
+                        "angle": 89.51514997676945, 
+                        "measurement_mrid": "_f7412f91-4ae7-4adc-8442-47756decd6f8"
+                    }, 
+                    {
+                        "measurement_mrid": "_78b11383-793e-40b8-afdc-2acb3f790218", 
+                        "value": 4
+                    }, 
+                    {
+                        "measurement_mrid": "_990c6ef2-801d-48be-8256-ec82e0cedb44", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_aea61d9e-9d77-49d6-91da-f14cfed81815", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_be28ddc6-eb3e-47bb-87c5-53d71b02a61c", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_cc49318c-0f92-4a12-9222-6aa6538736c0", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_d4fd34ed-53aa-411e-b74a-89f8972b5064", 
+                        "value": 4
+                    }
+                ]
+            }
+        }, 
+        "13": {
+            "simulation_id": "1062097031", 
+            "message": {
+                "timestamp": "2018-05-18 17:07:39.621744", 
+                "measurements": [
+                    {
+                        "measurement_mrid": "_74653361-3b39-41af-8592-def0653ea623", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_8f100920-469e-45c1-b9c7-55c0d601b0e7", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_4cb1b7aa-7a19-49a0-9261-2d6dc340292d", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_5daba227-ee21-4266-b00c-76d693f5c436", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_652a49a1-96ea-48a2-9906-8c170abcba7f", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_6909db32-a7cb-41e6-8244-2f1250bdfe9e", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_ae7627a8-6078-4d98-b28e-4331e16d3260", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_f8305ddf-391c-4002-aea9-00160603c0c3", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_11f91eab-070c-43bd-bfde-330f538885fa", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_551a5188-4850-4979-ad18-6c30091e7b57", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_267646f2-b03e-458c-ae76-0730a9cbaaf1", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_c00e1902-cd87-4182-8367-c8f0ea97c552", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_0dcbe27c-471c-4604-8e5c-83bc52318258", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_42b7689a-0321-43ba-9d4a-0c257ccb23be", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_36df2d8b-2906-4c33-9f0d-1c42fefdda9f", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_3783e729-3328-4983-9db7-23f6befa3536", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_59f92d0d-7e9b-45dc-bf67-b17510fcc22a", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_a929c951-c185-4eb1-bdf7-010be27dedc6", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_bb1eda2e-c31d-4180-964a-3ab906b8d629", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_ca7585ec-e609-4eb8-b0ce-9f44dc42e918", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_577f7bfb-2fd4-43ba-897b-c5d750a70b0c", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_b6419656-0eb5-4c8c-8241-93af6952868d", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_453a4a6d-4b77-4ec1-ba0e-edb056ab1ac4", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_ee7c5fef-0c2d-4a1e-a073-e337dbe5b311", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_252ae76d-4b8c-4807-a004-6b4bdad75037", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_7e8634d7-6b47-4ea4-b3db-5186b187715a", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_0d9a6ca0-ed29-4f86-93f4-59e96dab0ad0", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_3e31c46c-b32f-4959-9a53-201c8408d9e9", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_719ed096-dc34-4bef-aaec-028986cfdc73", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_888bbda5-f93b-448d-999a-6f5aec86bf85", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_944fad4a-2541-44ff-8f88-0a5aa7a9d659", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_ec9d7b54-0513-4743-af0d-4e6eba7f6b69", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_bfcf524f-45ab-4556-9d14-295466cee5d8", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_cd75a1d7-f19f-4f85-8be1-6562eb87c8fd", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_0044477d-d23e-45ef-b010-627e63913d18", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_0356d089-f691-4468-abd8-398da2ffa06e", 
+                        "value": 0
+                    }, 
+                    {
+                        "magnitude": 1701262.0772424773, 
+                        "angle": 15.969440126821322, 
+                        "measurement_mrid": "_10db7f16-400b-4dc8-8f6c-1664931817aa"
+                    }, 
+                    {
+                        "magnitude": 1747626.5316811553, 
+                        "angle": 19.094116571275553, 
+                        "measurement_mrid": "_2e0d7858-974f-403e-8631-4da1235f30b5"
+                    }, 
+                    {
+                        "magnitude": 1701262.0772424773, 
+                        "angle": 15.969440126821322, 
+                        "measurement_mrid": "_4194433d-1813-49c8-b02d-6252a346b97c"
+                    }, 
+                    {
+                        "magnitude": 1747626.5316811553, 
+                        "angle": 19.094116571275553, 
+                        "measurement_mrid": "_6c41b9f1-8bbe-45ec-b5ad-f48ccada98c2"
+                    }, 
+                    {
+                        "magnitude": 1642874.6209774807, 
+                        "angle": 18.95381057572212, 
+                        "measurement_mrid": "_80b4ce92-af77-485c-a8eb-f242f574bc8a"
+                    }, 
+                    {
+                        "magnitude": 1642874.6209774807, 
+                        "angle": 18.95381057572212, 
+                        "measurement_mrid": "_f23418a5-db39-4509-9d80-754626773ad4"
+                    }, 
+                    {
+                        "measurement_mrid": "_2b832429-a785-4724-b109-e361efe97f05", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_5664c773-77df-47e6-9b40-2b7341723e63", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_6e50c5a6-bda1-476b-8fcf-7d672358c4ac", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_738fcb1a-8144-487b-a189-611f8f952e0c", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_ec56f22d-7eab-4d12-ad2b-9c2791019262", 
+                        "value": 6
+                    }, 
+                    {
+                        "measurement_mrid": "_f499bf6a-f8d7-425d-81cb-197bd4c881b2", 
+                        "value": 6
+                    }, 
+                    {
+                        "magnitude": 7171.743212743507, 
+                        "angle": -150.5109403710677, 
+                        "measurement_mrid": "_11e4ede6-0dbf-494a-9950-e71058dfc599"
+                    }, 
+                    {
+                        "magnitude": 7171.334356377101, 
+                        "angle": -30.530832400104057, 
+                        "measurement_mrid": "_709c9f09-87ea-4027-969b-41050b6ef8fe"
+                    }, 
+                    {
+                        "magnitude": 7175.501529473597, 
+                        "angle": 89.51523434422913, 
+                        "measurement_mrid": "_f7412f91-4ae7-4adc-8442-47756decd6f8"
+                    }, 
+                    {
+                        "measurement_mrid": "_78b11383-793e-40b8-afdc-2acb3f790218", 
+                        "value": 4
+                    }, 
+                    {
+                        "measurement_mrid": "_990c6ef2-801d-48be-8256-ec82e0cedb44", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_aea61d9e-9d77-49d6-91da-f14cfed81815", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_be28ddc6-eb3e-47bb-87c5-53d71b02a61c", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_cc49318c-0f92-4a12-9222-6aa6538736c0", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_d4fd34ed-53aa-411e-b74a-89f8972b5064", 
+                        "value": 4
+                    }
+                ]
+            }
+        }, 
+        "12": {
+            "simulation_id": "1062097031", 
+            "message": {
+                "timestamp": "2018-05-18 17:07:38.021982", 
+                "measurements": [
+                    {
+                        "measurement_mrid": "_74653361-3b39-41af-8592-def0653ea623", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_8f100920-469e-45c1-b9c7-55c0d601b0e7", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_4cb1b7aa-7a19-49a0-9261-2d6dc340292d", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_5daba227-ee21-4266-b00c-76d693f5c436", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_652a49a1-96ea-48a2-9906-8c170abcba7f", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_6909db32-a7cb-41e6-8244-2f1250bdfe9e", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_ae7627a8-6078-4d98-b28e-4331e16d3260", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_f8305ddf-391c-4002-aea9-00160603c0c3", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_11f91eab-070c-43bd-bfde-330f538885fa", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_551a5188-4850-4979-ad18-6c30091e7b57", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_267646f2-b03e-458c-ae76-0730a9cbaaf1", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_c00e1902-cd87-4182-8367-c8f0ea97c552", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_0dcbe27c-471c-4604-8e5c-83bc52318258", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_42b7689a-0321-43ba-9d4a-0c257ccb23be", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_36df2d8b-2906-4c33-9f0d-1c42fefdda9f", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_3783e729-3328-4983-9db7-23f6befa3536", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_59f92d0d-7e9b-45dc-bf67-b17510fcc22a", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_a929c951-c185-4eb1-bdf7-010be27dedc6", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_bb1eda2e-c31d-4180-964a-3ab906b8d629", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_ca7585ec-e609-4eb8-b0ce-9f44dc42e918", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_577f7bfb-2fd4-43ba-897b-c5d750a70b0c", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_b6419656-0eb5-4c8c-8241-93af6952868d", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_453a4a6d-4b77-4ec1-ba0e-edb056ab1ac4", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_ee7c5fef-0c2d-4a1e-a073-e337dbe5b311", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_252ae76d-4b8c-4807-a004-6b4bdad75037", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_7e8634d7-6b47-4ea4-b3db-5186b187715a", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_0d9a6ca0-ed29-4f86-93f4-59e96dab0ad0", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_3e31c46c-b32f-4959-9a53-201c8408d9e9", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_719ed096-dc34-4bef-aaec-028986cfdc73", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_888bbda5-f93b-448d-999a-6f5aec86bf85", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_944fad4a-2541-44ff-8f88-0a5aa7a9d659", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_ec9d7b54-0513-4743-af0d-4e6eba7f6b69", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_bfcf524f-45ab-4556-9d14-295466cee5d8", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_cd75a1d7-f19f-4f85-8be1-6562eb87c8fd", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_0044477d-d23e-45ef-b010-627e63913d18", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_0356d089-f691-4468-abd8-398da2ffa06e", 
+                        "value": 0
+                    }, 
+                    {
+                        "magnitude": 1701251.7676584045, 
+                        "angle": 15.968495899469463, 
+                        "measurement_mrid": "_10db7f16-400b-4dc8-8f6c-1664931817aa"
+                    }, 
+                    {
+                        "magnitude": 1747646.1682759288, 
+                        "angle": 19.09377036688656, 
+                        "measurement_mrid": "_2e0d7858-974f-403e-8631-4da1235f30b5"
+                    }, 
+                    {
+                        "magnitude": 1701251.7676584045, 
+                        "angle": 15.968495899469463, 
+                        "measurement_mrid": "_4194433d-1813-49c8-b02d-6252a346b97c"
+                    }, 
+                    {
+                        "magnitude": 1747646.1682759288, 
+                        "angle": 19.09377036688656, 
+                        "measurement_mrid": "_6c41b9f1-8bbe-45ec-b5ad-f48ccada98c2"
+                    }, 
+                    {
+                        "magnitude": 1642863.8953626496, 
+                        "angle": 18.95409732552703, 
+                        "measurement_mrid": "_80b4ce92-af77-485c-a8eb-f242f574bc8a"
+                    }, 
+                    {
+                        "magnitude": 1642863.8953626496, 
+                        "angle": 18.95409732552703, 
+                        "measurement_mrid": "_f23418a5-db39-4509-9d80-754626773ad4"
+                    }, 
+                    {
+                        "measurement_mrid": "_2b832429-a785-4724-b109-e361efe97f05", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_5664c773-77df-47e6-9b40-2b7341723e63", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_6e50c5a6-bda1-476b-8fcf-7d672358c4ac", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_738fcb1a-8144-487b-a189-611f8f952e0c", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_ec56f22d-7eab-4d12-ad2b-9c2791019262", 
+                        "value": 6
+                    }, 
+                    {
+                        "measurement_mrid": "_f499bf6a-f8d7-425d-81cb-197bd4c881b2", 
+                        "value": 6
+                    }, 
+                    {
+                        "magnitude": 7171.742244965214, 
+                        "angle": -150.5109369531683, 
+                        "measurement_mrid": "_11e4ede6-0dbf-494a-9950-e71058dfc599"
+                    }, 
+                    {
+                        "magnitude": 7171.336108541066, 
+                        "angle": -30.53083775114677, 
+                        "measurement_mrid": "_709c9f09-87ea-4027-969b-41050b6ef8fe"
+                    }, 
+                    {
+                        "magnitude": 7175.501904619322, 
+                        "angle": 89.51523327560136, 
+                        "measurement_mrid": "_f7412f91-4ae7-4adc-8442-47756decd6f8"
+                    }, 
+                    {
+                        "measurement_mrid": "_78b11383-793e-40b8-afdc-2acb3f790218", 
+                        "value": 4
+                    }, 
+                    {
+                        "measurement_mrid": "_990c6ef2-801d-48be-8256-ec82e0cedb44", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_aea61d9e-9d77-49d6-91da-f14cfed81815", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_be28ddc6-eb3e-47bb-87c5-53d71b02a61c", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_cc49318c-0f92-4a12-9222-6aa6538736c0", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_d4fd34ed-53aa-411e-b74a-89f8972b5064", 
+                        "value": 4
+                    }
+                ]
+            }
+        }, 
+        "15": {
+            "simulation_id": "1062097031", 
+            "message": {
+                "timestamp": "2018-05-18 17:07:42.853600", 
+                "measurements": [
+                    {
+                        "measurement_mrid": "_74653361-3b39-41af-8592-def0653ea623", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_8f100920-469e-45c1-b9c7-55c0d601b0e7", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_4cb1b7aa-7a19-49a0-9261-2d6dc340292d", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_5daba227-ee21-4266-b00c-76d693f5c436", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_652a49a1-96ea-48a2-9906-8c170abcba7f", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_6909db32-a7cb-41e6-8244-2f1250bdfe9e", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_ae7627a8-6078-4d98-b28e-4331e16d3260", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_f8305ddf-391c-4002-aea9-00160603c0c3", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_11f91eab-070c-43bd-bfde-330f538885fa", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_551a5188-4850-4979-ad18-6c30091e7b57", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_267646f2-b03e-458c-ae76-0730a9cbaaf1", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_c00e1902-cd87-4182-8367-c8f0ea97c552", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0dcbe27c-471c-4604-8e5c-83bc52318258", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_42b7689a-0321-43ba-9d4a-0c257ccb23be", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_36df2d8b-2906-4c33-9f0d-1c42fefdda9f", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_3783e729-3328-4983-9db7-23f6befa3536", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_59f92d0d-7e9b-45dc-bf67-b17510fcc22a", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_a929c951-c185-4eb1-bdf7-010be27dedc6", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_bb1eda2e-c31d-4180-964a-3ab906b8d629", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_ca7585ec-e609-4eb8-b0ce-9f44dc42e918", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_577f7bfb-2fd4-43ba-897b-c5d750a70b0c", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_b6419656-0eb5-4c8c-8241-93af6952868d", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_453a4a6d-4b77-4ec1-ba0e-edb056ab1ac4", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_ee7c5fef-0c2d-4a1e-a073-e337dbe5b311", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_252ae76d-4b8c-4807-a004-6b4bdad75037", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_7e8634d7-6b47-4ea4-b3db-5186b187715a", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0d9a6ca0-ed29-4f86-93f4-59e96dab0ad0", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_3e31c46c-b32f-4959-9a53-201c8408d9e9", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_719ed096-dc34-4bef-aaec-028986cfdc73", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_888bbda5-f93b-448d-999a-6f5aec86bf85", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_944fad4a-2541-44ff-8f88-0a5aa7a9d659", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_ec9d7b54-0513-4743-af0d-4e6eba7f6b69", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_bfcf524f-45ab-4556-9d14-295466cee5d8", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_cd75a1d7-f19f-4f85-8be1-6562eb87c8fd", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0044477d-d23e-45ef-b010-627e63913d18", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0356d089-f691-4468-abd8-398da2ffa06e", 
+                        "value": 1
+                    }, 
+                    {
+                        "magnitude": 1930439.600962563, 
+                        "angle": -29.337847783721763, 
+                        "measurement_mrid": "_10db7f16-400b-4dc8-8f6c-1664931817aa"
+                    }, 
+                    {
+                        "magnitude": 1966307.434812572, 
+                        "angle": -26.47807562927905, 
+                        "measurement_mrid": "_2e0d7858-974f-403e-8631-4da1235f30b5"
+                    }, 
+                    {
+                        "magnitude": 1930439.600962563, 
+                        "angle": -29.337847783721763, 
+                        "measurement_mrid": "_4194433d-1813-49c8-b02d-6252a346b97c"
+                    }, 
+                    {
+                        "magnitude": 1966307.434812572, 
+                        "angle": -26.47807562927905, 
+                        "measurement_mrid": "_6c41b9f1-8bbe-45ec-b5ad-f48ccada98c2"
+                    }, 
+                    {
+                        "magnitude": 1863821.931586616, 
+                        "angle": -26.939549755878247, 
+                        "measurement_mrid": "_80b4ce92-af77-485c-a8eb-f242f574bc8a"
+                    }, 
+                    {
+                        "magnitude": 1863821.931586616, 
+                        "angle": -26.939549755878247, 
+                        "measurement_mrid": "_f23418a5-db39-4509-9d80-754626773ad4"
+                    }, 
+                    {
+                        "measurement_mrid": "_2b832429-a785-4724-b109-e361efe97f05", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_5664c773-77df-47e6-9b40-2b7341723e63", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_6e50c5a6-bda1-476b-8fcf-7d672358c4ac", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_738fcb1a-8144-487b-a189-611f8f952e0c", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_ec56f22d-7eab-4d12-ad2b-9c2791019262", 
+                        "value": 6
+                    }, 
+                    {
+                        "measurement_mrid": "_f499bf6a-f8d7-425d-81cb-197bd4c881b2", 
+                        "value": 6
+                    }, 
+                    {
+                        "magnitude": 7229.596902943208, 
+                        "angle": -150.57910036827005, 
+                        "measurement_mrid": "_11e4ede6-0dbf-494a-9950-e71058dfc599"
+                    }, 
+                    {
+                        "magnitude": 7230.552253862103, 
+                        "angle": -30.59868771824979, 
+                        "measurement_mrid": "_709c9f09-87ea-4027-969b-41050b6ef8fe"
+                    }, 
+                    {
+                        "magnitude": 7229.980033996632, 
+                        "angle": 89.46024332992268, 
+                        "measurement_mrid": "_f7412f91-4ae7-4adc-8442-47756decd6f8"
+                    }, 
+                    {
+                        "measurement_mrid": "_78b11383-793e-40b8-afdc-2acb3f790218", 
+                        "value": 4
+                    }, 
+                    {
+                        "measurement_mrid": "_990c6ef2-801d-48be-8256-ec82e0cedb44", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_aea61d9e-9d77-49d6-91da-f14cfed81815", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_be28ddc6-eb3e-47bb-87c5-53d71b02a61c", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_cc49318c-0f92-4a12-9222-6aa6538736c0", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_d4fd34ed-53aa-411e-b74a-89f8972b5064", 
+                        "value": 4
+                    }
+                ]
+            }
+        }, 
+        "14": {
+            "simulation_id": "1062097031", 
+            "message": {
+                "timestamp": "2018-05-18 17:07:40.863204", 
+                "measurements": [
+                    {
+                        "measurement_mrid": "_74653361-3b39-41af-8592-def0653ea623", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_8f100920-469e-45c1-b9c7-55c0d601b0e7", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_4cb1b7aa-7a19-49a0-9261-2d6dc340292d", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_5daba227-ee21-4266-b00c-76d693f5c436", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_652a49a1-96ea-48a2-9906-8c170abcba7f", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_6909db32-a7cb-41e6-8244-2f1250bdfe9e", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_ae7627a8-6078-4d98-b28e-4331e16d3260", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_f8305ddf-391c-4002-aea9-00160603c0c3", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_11f91eab-070c-43bd-bfde-330f538885fa", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_551a5188-4850-4979-ad18-6c30091e7b57", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_267646f2-b03e-458c-ae76-0730a9cbaaf1", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_c00e1902-cd87-4182-8367-c8f0ea97c552", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_0dcbe27c-471c-4604-8e5c-83bc52318258", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_42b7689a-0321-43ba-9d4a-0c257ccb23be", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_36df2d8b-2906-4c33-9f0d-1c42fefdda9f", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_3783e729-3328-4983-9db7-23f6befa3536", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_59f92d0d-7e9b-45dc-bf67-b17510fcc22a", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_a929c951-c185-4eb1-bdf7-010be27dedc6", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_bb1eda2e-c31d-4180-964a-3ab906b8d629", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_ca7585ec-e609-4eb8-b0ce-9f44dc42e918", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_577f7bfb-2fd4-43ba-897b-c5d750a70b0c", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_b6419656-0eb5-4c8c-8241-93af6952868d", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_453a4a6d-4b77-4ec1-ba0e-edb056ab1ac4", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_ee7c5fef-0c2d-4a1e-a073-e337dbe5b311", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_252ae76d-4b8c-4807-a004-6b4bdad75037", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_7e8634d7-6b47-4ea4-b3db-5186b187715a", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_0d9a6ca0-ed29-4f86-93f4-59e96dab0ad0", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_3e31c46c-b32f-4959-9a53-201c8408d9e9", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_719ed096-dc34-4bef-aaec-028986cfdc73", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_888bbda5-f93b-448d-999a-6f5aec86bf85", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_944fad4a-2541-44ff-8f88-0a5aa7a9d659", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_ec9d7b54-0513-4743-af0d-4e6eba7f6b69", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_bfcf524f-45ab-4556-9d14-295466cee5d8", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_cd75a1d7-f19f-4f85-8be1-6562eb87c8fd", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_0044477d-d23e-45ef-b010-627e63913d18", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_0356d089-f691-4468-abd8-398da2ffa06e", 
+                        "value": 0
+                    }, 
+                    {
+                        "magnitude": 1701261.2263808197, 
+                        "angle": 15.969321342111312, 
+                        "measurement_mrid": "_10db7f16-400b-4dc8-8f6c-1664931817aa"
+                    }, 
+                    {
+                        "magnitude": 1747627.681593119, 
+                        "angle": 19.094100372667256, 
+                        "measurement_mrid": "_2e0d7858-974f-403e-8631-4da1235f30b5"
+                    }, 
+                    {
+                        "magnitude": 1701261.2263808197, 
+                        "angle": 15.969321342111312, 
+                        "measurement_mrid": "_4194433d-1813-49c8-b02d-6252a346b97c"
+                    }, 
+                    {
+                        "magnitude": 1747627.681593119, 
+                        "angle": 19.094100372667256, 
+                        "measurement_mrid": "_6c41b9f1-8bbe-45ec-b5ad-f48ccada98c2"
+                    }, 
+                    {
+                        "magnitude": 1642872.0933240561, 
+                        "angle": 18.953807339618315, 
+                        "measurement_mrid": "_80b4ce92-af77-485c-a8eb-f242f574bc8a"
+                    }, 
+                    {
+                        "magnitude": 1642872.0933240561, 
+                        "angle": 18.953807339618315, 
+                        "measurement_mrid": "_f23418a5-db39-4509-9d80-754626773ad4"
+                    }, 
+                    {
+                        "measurement_mrid": "_2b832429-a785-4724-b109-e361efe97f05", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_5664c773-77df-47e6-9b40-2b7341723e63", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_6e50c5a6-bda1-476b-8fcf-7d672358c4ac", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_738fcb1a-8144-487b-a189-611f8f952e0c", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_ec56f22d-7eab-4d12-ad2b-9c2791019262", 
+                        "value": 6
+                    }, 
+                    {
+                        "measurement_mrid": "_f499bf6a-f8d7-425d-81cb-197bd4c881b2", 
+                        "value": 6
+                    }, 
+                    {
+                        "magnitude": 7171.743106326587, 
+                        "angle": -150.51093971589137, 
+                        "measurement_mrid": "_11e4ede6-0dbf-494a-9950-e71058dfc599"
+                    }, 
+                    {
+                        "magnitude": 7171.334524432291, 
+                        "angle": -30.530832600712422, 
+                        "measurement_mrid": "_709c9f09-87ea-4027-969b-41050b6ef8fe"
+                    }, 
+                    {
+                        "magnitude": 7175.501659748146, 
+                        "angle": 89.51523408951883, 
+                        "measurement_mrid": "_f7412f91-4ae7-4adc-8442-47756decd6f8"
+                    }, 
+                    {
+                        "measurement_mrid": "_78b11383-793e-40b8-afdc-2acb3f790218", 
+                        "value": 4
+                    }, 
+                    {
+                        "measurement_mrid": "_990c6ef2-801d-48be-8256-ec82e0cedb44", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_aea61d9e-9d77-49d6-91da-f14cfed81815", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_be28ddc6-eb3e-47bb-87c5-53d71b02a61c", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_cc49318c-0f92-4a12-9222-6aa6538736c0", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_d4fd34ed-53aa-411e-b74a-89f8972b5064", 
+                        "value": 4
+                    }
+                ]
+            }
+        }, 
+        "16": {
+            "simulation_id": "1062097031", 
+            "message": {
+                "timestamp": "2018-05-18 17:07:44.910057", 
+                "measurements": [
+                    {
+                        "measurement_mrid": "_74653361-3b39-41af-8592-def0653ea623", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_8f100920-469e-45c1-b9c7-55c0d601b0e7", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_4cb1b7aa-7a19-49a0-9261-2d6dc340292d", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_5daba227-ee21-4266-b00c-76d693f5c436", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_652a49a1-96ea-48a2-9906-8c170abcba7f", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_6909db32-a7cb-41e6-8244-2f1250bdfe9e", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_ae7627a8-6078-4d98-b28e-4331e16d3260", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_f8305ddf-391c-4002-aea9-00160603c0c3", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_11f91eab-070c-43bd-bfde-330f538885fa", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_551a5188-4850-4979-ad18-6c30091e7b57", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_267646f2-b03e-458c-ae76-0730a9cbaaf1", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_c00e1902-cd87-4182-8367-c8f0ea97c552", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0dcbe27c-471c-4604-8e5c-83bc52318258", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_42b7689a-0321-43ba-9d4a-0c257ccb23be", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_36df2d8b-2906-4c33-9f0d-1c42fefdda9f", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_3783e729-3328-4983-9db7-23f6befa3536", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_59f92d0d-7e9b-45dc-bf67-b17510fcc22a", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_a929c951-c185-4eb1-bdf7-010be27dedc6", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_bb1eda2e-c31d-4180-964a-3ab906b8d629", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_ca7585ec-e609-4eb8-b0ce-9f44dc42e918", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_577f7bfb-2fd4-43ba-897b-c5d750a70b0c", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_b6419656-0eb5-4c8c-8241-93af6952868d", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_453a4a6d-4b77-4ec1-ba0e-edb056ab1ac4", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_ee7c5fef-0c2d-4a1e-a073-e337dbe5b311", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_252ae76d-4b8c-4807-a004-6b4bdad75037", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_7e8634d7-6b47-4ea4-b3db-5186b187715a", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0d9a6ca0-ed29-4f86-93f4-59e96dab0ad0", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_3e31c46c-b32f-4959-9a53-201c8408d9e9", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_719ed096-dc34-4bef-aaec-028986cfdc73", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_888bbda5-f93b-448d-999a-6f5aec86bf85", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_944fad4a-2541-44ff-8f88-0a5aa7a9d659", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_ec9d7b54-0513-4743-af0d-4e6eba7f6b69", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_bfcf524f-45ab-4556-9d14-295466cee5d8", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_cd75a1d7-f19f-4f85-8be1-6562eb87c8fd", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0044477d-d23e-45ef-b010-627e63913d18", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0356d089-f691-4468-abd8-398da2ffa06e", 
+                        "value": 1
+                    }, 
+                    {
+                        "magnitude": 1910617.2985622527, 
+                        "angle": -28.633147357409246, 
+                        "measurement_mrid": "_10db7f16-400b-4dc8-8f6c-1664931817aa"
+                    }, 
+                    {
+                        "magnitude": 1938628.1926347367, 
+                        "angle": -25.73245977636225, 
+                        "measurement_mrid": "_2e0d7858-974f-403e-8631-4da1235f30b5"
+                    }, 
+                    {
+                        "magnitude": 1910617.2985622527, 
+                        "angle": -28.633147357409246, 
+                        "measurement_mrid": "_4194433d-1813-49c8-b02d-6252a346b97c"
+                    }, 
+                    {
+                        "magnitude": 1938628.1926347367, 
+                        "angle": -25.73245977636225, 
+                        "measurement_mrid": "_6c41b9f1-8bbe-45ec-b5ad-f48ccada98c2"
+                    }, 
+                    {
+                        "magnitude": 1839796.3188442143, 
+                        "angle": -26.416509202744034, 
+                        "measurement_mrid": "_80b4ce92-af77-485c-a8eb-f242f574bc8a"
+                    }, 
+                    {
+                        "magnitude": 1839796.3188442143, 
+                        "angle": -26.416509202744034, 
+                        "measurement_mrid": "_f23418a5-db39-4509-9d80-754626773ad4"
+                    }, 
+                    {
+                        "measurement_mrid": "_2b832429-a785-4724-b109-e361efe97f05", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_5664c773-77df-47e6-9b40-2b7341723e63", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_6e50c5a6-bda1-476b-8fcf-7d672358c4ac", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_738fcb1a-8144-487b-a189-611f8f952e0c", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_ec56f22d-7eab-4d12-ad2b-9c2791019262", 
+                        "value": 6
+                    }, 
+                    {
+                        "measurement_mrid": "_f499bf6a-f8d7-425d-81cb-197bd4c881b2", 
+                        "value": 6
+                    }, 
+                    {
+                        "magnitude": 7228.2238093374235, 
+                        "angle": -150.5740941338012, 
+                        "measurement_mrid": "_11e4ede6-0dbf-494a-9950-e71058dfc599"
+                    }, 
+                    {
+                        "magnitude": 7229.1396299091975, 
+                        "angle": -30.593340588569678, 
+                        "measurement_mrid": "_709c9f09-87ea-4027-969b-41050b6ef8fe"
+                    }, 
+                    {
+                        "magnitude": 7229.163964494103, 
+                        "angle": 89.46291298146076, 
+                        "measurement_mrid": "_f7412f91-4ae7-4adc-8442-47756decd6f8"
+                    }, 
+                    {
+                        "measurement_mrid": "_78b11383-793e-40b8-afdc-2acb3f790218", 
+                        "value": 4
+                    }, 
+                    {
+                        "measurement_mrid": "_990c6ef2-801d-48be-8256-ec82e0cedb44", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_aea61d9e-9d77-49d6-91da-f14cfed81815", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_be28ddc6-eb3e-47bb-87c5-53d71b02a61c", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_cc49318c-0f92-4a12-9222-6aa6538736c0", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_d4fd34ed-53aa-411e-b74a-89f8972b5064", 
+                        "value": 4
+                    }
+                ]
+            }
+        }, 
+        "1": {
+            "simulation_id": "1062097031", 
+            "message": {
+                "timestamp": "2018-05-18 17:07:23.213868", 
+                "measurements": [
+                    {
+                        "measurement_mrid": "_74653361-3b39-41af-8592-def0653ea623", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_8f100920-469e-45c1-b9c7-55c0d601b0e7", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_4cb1b7aa-7a19-49a0-9261-2d6dc340292d", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_5daba227-ee21-4266-b00c-76d693f5c436", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_652a49a1-96ea-48a2-9906-8c170abcba7f", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_6909db32-a7cb-41e6-8244-2f1250bdfe9e", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_ae7627a8-6078-4d98-b28e-4331e16d3260", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_f8305ddf-391c-4002-aea9-00160603c0c3", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_11f91eab-070c-43bd-bfde-330f538885fa", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_551a5188-4850-4979-ad18-6c30091e7b57", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_267646f2-b03e-458c-ae76-0730a9cbaaf1", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_c00e1902-cd87-4182-8367-c8f0ea97c552", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0dcbe27c-471c-4604-8e5c-83bc52318258", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_42b7689a-0321-43ba-9d4a-0c257ccb23be", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_36df2d8b-2906-4c33-9f0d-1c42fefdda9f", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_3783e729-3328-4983-9db7-23f6befa3536", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_59f92d0d-7e9b-45dc-bf67-b17510fcc22a", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_a929c951-c185-4eb1-bdf7-010be27dedc6", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_bb1eda2e-c31d-4180-964a-3ab906b8d629", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_ca7585ec-e609-4eb8-b0ce-9f44dc42e918", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_577f7bfb-2fd4-43ba-897b-c5d750a70b0c", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_b6419656-0eb5-4c8c-8241-93af6952868d", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_453a4a6d-4b77-4ec1-ba0e-edb056ab1ac4", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_ee7c5fef-0c2d-4a1e-a073-e337dbe5b311", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_252ae76d-4b8c-4807-a004-6b4bdad75037", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_7e8634d7-6b47-4ea4-b3db-5186b187715a", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0d9a6ca0-ed29-4f86-93f4-59e96dab0ad0", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_3e31c46c-b32f-4959-9a53-201c8408d9e9", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_719ed096-dc34-4bef-aaec-028986cfdc73", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_888bbda5-f93b-448d-999a-6f5aec86bf85", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_944fad4a-2541-44ff-8f88-0a5aa7a9d659", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_ec9d7b54-0513-4743-af0d-4e6eba7f6b69", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_bfcf524f-45ab-4556-9d14-295466cee5d8", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_cd75a1d7-f19f-4f85-8be1-6562eb87c8fd", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0044477d-d23e-45ef-b010-627e63913d18", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0356d089-f691-4468-abd8-398da2ffa06e", 
+                        "value": 1
+                    }, 
+                    {
+                        "magnitude": 1913472.5790285447, 
+                        "angle": -28.80492805305314, 
+                        "measurement_mrid": "_10db7f16-400b-4dc8-8f6c-1664931817aa"
+                    }, 
+                    {
+                        "magnitude": 1944835.7096055774, 
+                        "angle": -25.819302615130628, 
+                        "measurement_mrid": "_2e0d7858-974f-403e-8631-4da1235f30b5"
+                    }, 
+                    {
+                        "magnitude": 1913472.5790285447, 
+                        "angle": -28.80492805305314, 
+                        "measurement_mrid": "_4194433d-1813-49c8-b02d-6252a346b97c"
+                    }, 
+                    {
+                        "magnitude": 1944835.7096055774, 
+                        "angle": -25.819302615130628, 
+                        "measurement_mrid": "_6c41b9f1-8bbe-45ec-b5ad-f48ccada98c2"
+                    }, 
+                    {
+                        "magnitude": 1841656.6587783687, 
+                        "angle": -26.454630264678414, 
+                        "measurement_mrid": "_80b4ce92-af77-485c-a8eb-f242f574bc8a"
+                    }, 
+                    {
+                        "magnitude": 1841656.6587783687, 
+                        "angle": -26.454630264678414, 
+                        "measurement_mrid": "_f23418a5-db39-4509-9d80-754626773ad4"
+                    }, 
+                    {
+                        "measurement_mrid": "_2b832429-a785-4724-b109-e361efe97f05", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_5664c773-77df-47e6-9b40-2b7341723e63", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_6e50c5a6-bda1-476b-8fcf-7d672358c4ac", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_738fcb1a-8144-487b-a189-611f8f952e0c", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_ec56f22d-7eab-4d12-ad2b-9c2791019262", 
+                        "value": 6
+                    }, 
+                    {
+                        "measurement_mrid": "_f499bf6a-f8d7-425d-81cb-197bd4c881b2", 
+                        "value": 6
+                    }, 
+                    {
+                        "magnitude": 7228.335603903792, 
+                        "angle": -150.57441214852923, 
+                        "measurement_mrid": "_11e4ede6-0dbf-494a-9950-e71058dfc599"
+                    }, 
+                    {
+                        "magnitude": 7229.52131460502, 
+                        "angle": -30.5948281466698, 
+                        "measurement_mrid": "_709c9f09-87ea-4027-969b-41050b6ef8fe"
+                    }, 
+                    {
+                        "magnitude": 7229.210304969305, 
+                        "angle": 89.46271310813042, 
+                        "measurement_mrid": "_f7412f91-4ae7-4adc-8442-47756decd6f8"
+                    }, 
+                    {
+                        "measurement_mrid": "_78b11383-793e-40b8-afdc-2acb3f790218", 
+                        "value": 4
+                    }, 
+                    {
+                        "measurement_mrid": "_990c6ef2-801d-48be-8256-ec82e0cedb44", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_aea61d9e-9d77-49d6-91da-f14cfed81815", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_be28ddc6-eb3e-47bb-87c5-53d71b02a61c", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_cc49318c-0f92-4a12-9222-6aa6538736c0", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_d4fd34ed-53aa-411e-b74a-89f8972b5064", 
+                        "value": 4
+                    }
+                ]
+            }
+        }, 
+        "0": {
+            "simulation_id": "1062097031", 
+            "message": {
+                "timestamp": "2018-05-18 17:07:21.253754", 
+                "measurements": [
+                    {
+                        "measurement_mrid": "_74653361-3b39-41af-8592-def0653ea623", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_8f100920-469e-45c1-b9c7-55c0d601b0e7", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_4cb1b7aa-7a19-49a0-9261-2d6dc340292d", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_5daba227-ee21-4266-b00c-76d693f5c436", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_652a49a1-96ea-48a2-9906-8c170abcba7f", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_6909db32-a7cb-41e6-8244-2f1250bdfe9e", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_ae7627a8-6078-4d98-b28e-4331e16d3260", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_f8305ddf-391c-4002-aea9-00160603c0c3", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_11f91eab-070c-43bd-bfde-330f538885fa", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_551a5188-4850-4979-ad18-6c30091e7b57", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_267646f2-b03e-458c-ae76-0730a9cbaaf1", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_c00e1902-cd87-4182-8367-c8f0ea97c552", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0dcbe27c-471c-4604-8e5c-83bc52318258", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_42b7689a-0321-43ba-9d4a-0c257ccb23be", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_36df2d8b-2906-4c33-9f0d-1c42fefdda9f", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_3783e729-3328-4983-9db7-23f6befa3536", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_59f92d0d-7e9b-45dc-bf67-b17510fcc22a", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_a929c951-c185-4eb1-bdf7-010be27dedc6", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_bb1eda2e-c31d-4180-964a-3ab906b8d629", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_ca7585ec-e609-4eb8-b0ce-9f44dc42e918", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_577f7bfb-2fd4-43ba-897b-c5d750a70b0c", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_b6419656-0eb5-4c8c-8241-93af6952868d", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_453a4a6d-4b77-4ec1-ba0e-edb056ab1ac4", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_ee7c5fef-0c2d-4a1e-a073-e337dbe5b311", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_252ae76d-4b8c-4807-a004-6b4bdad75037", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_7e8634d7-6b47-4ea4-b3db-5186b187715a", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0d9a6ca0-ed29-4f86-93f4-59e96dab0ad0", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_3e31c46c-b32f-4959-9a53-201c8408d9e9", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_719ed096-dc34-4bef-aaec-028986cfdc73", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_888bbda5-f93b-448d-999a-6f5aec86bf85", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_944fad4a-2541-44ff-8f88-0a5aa7a9d659", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_ec9d7b54-0513-4743-af0d-4e6eba7f6b69", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_bfcf524f-45ab-4556-9d14-295466cee5d8", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_cd75a1d7-f19f-4f85-8be1-6562eb87c8fd", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0044477d-d23e-45ef-b010-627e63913d18", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0356d089-f691-4468-abd8-398da2ffa06e", 
+                        "value": 1
+                    }, 
+                    {
+                        "magnitude": 1887257.3075206468, 
+                        "angle": -27.640802956112992, 
+                        "measurement_mrid": "_10db7f16-400b-4dc8-8f6c-1664931817aa"
+                    }, 
+                    {
+                        "magnitude": 1901231.4658094025, 
+                        "angle": -24.941481995523233, 
+                        "measurement_mrid": "_2e0d7858-974f-403e-8631-4da1235f30b5"
+                    }, 
+                    {
+                        "magnitude": 1887257.3075206468, 
+                        "angle": -27.640802956112992, 
+                        "measurement_mrid": "_4194433d-1813-49c8-b02d-6252a346b97c"
+                    }, 
+                    {
+                        "magnitude": 1901231.4658094025, 
+                        "angle": -24.941481995523233, 
+                        "measurement_mrid": "_6c41b9f1-8bbe-45ec-b5ad-f48ccada98c2"
+                    }, 
+                    {
+                        "magnitude": 1816481.4680641226, 
+                        "angle": -25.904316105749967, 
+                        "measurement_mrid": "_80b4ce92-af77-485c-a8eb-f242f574bc8a"
+                    }, 
+                    {
+                        "magnitude": 1816481.4680641226, 
+                        "angle": -25.904316105749967, 
+                        "measurement_mrid": "_f23418a5-db39-4509-9d80-754626773ad4"
+                    }, 
+                    {
+                        "measurement_mrid": "_2b832429-a785-4724-b109-e361efe97f05", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_5664c773-77df-47e6-9b40-2b7341723e63", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_6e50c5a6-bda1-476b-8fcf-7d672358c4ac", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_738fcb1a-8144-487b-a189-611f8f952e0c", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_ec56f22d-7eab-4d12-ad2b-9c2791019262", 
+                        "value": 6
+                    }, 
+                    {
+                        "measurement_mrid": "_f499bf6a-f8d7-425d-81cb-197bd4c881b2", 
+                        "value": 6
+                    }, 
+                    {
+                        "magnitude": 7226.901016482611, 
+                        "angle": -150.56924144956176, 
+                        "measurement_mrid": "_11e4ede6-0dbf-494a-9950-e71058dfc599"
+                    }, 
+                    {
+                        "magnitude": 7227.100693508502, 
+                        "angle": -30.58502860976305, 
+                        "measurement_mrid": "_709c9f09-87ea-4027-969b-41050b6ef8fe"
+                    }, 
+                    {
+                        "magnitude": 7228.388563848644, 
+                        "angle": 89.46563474581843, 
+                        "measurement_mrid": "_f7412f91-4ae7-4adc-8442-47756decd6f8"
+                    }, 
+                    {
+                        "measurement_mrid": "_78b11383-793e-40b8-afdc-2acb3f790218", 
+                        "value": 4
+                    }, 
+                    {
+                        "measurement_mrid": "_990c6ef2-801d-48be-8256-ec82e0cedb44", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_aea61d9e-9d77-49d6-91da-f14cfed81815", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_be28ddc6-eb3e-47bb-87c5-53d71b02a61c", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_cc49318c-0f92-4a12-9222-6aa6538736c0", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_d4fd34ed-53aa-411e-b74a-89f8972b5064", 
+                        "value": 4
+                    }
+                ]
+            }
+        }, 
+        "3": {
+            "simulation_id": "1062097031", 
+            "message": {
+                "timestamp": "2018-05-18 17:07:26.362066", 
+                "measurements": [
+                    {
+                        "measurement_mrid": "_74653361-3b39-41af-8592-def0653ea623", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_8f100920-469e-45c1-b9c7-55c0d601b0e7", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_4cb1b7aa-7a19-49a0-9261-2d6dc340292d", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_5daba227-ee21-4266-b00c-76d693f5c436", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_652a49a1-96ea-48a2-9906-8c170abcba7f", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_6909db32-a7cb-41e6-8244-2f1250bdfe9e", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_ae7627a8-6078-4d98-b28e-4331e16d3260", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_f8305ddf-391c-4002-aea9-00160603c0c3", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_11f91eab-070c-43bd-bfde-330f538885fa", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_551a5188-4850-4979-ad18-6c30091e7b57", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_267646f2-b03e-458c-ae76-0730a9cbaaf1", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_c00e1902-cd87-4182-8367-c8f0ea97c552", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0dcbe27c-471c-4604-8e5c-83bc52318258", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_42b7689a-0321-43ba-9d4a-0c257ccb23be", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_36df2d8b-2906-4c33-9f0d-1c42fefdda9f", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_3783e729-3328-4983-9db7-23f6befa3536", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_59f92d0d-7e9b-45dc-bf67-b17510fcc22a", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_a929c951-c185-4eb1-bdf7-010be27dedc6", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_bb1eda2e-c31d-4180-964a-3ab906b8d629", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_ca7585ec-e609-4eb8-b0ce-9f44dc42e918", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_577f7bfb-2fd4-43ba-897b-c5d750a70b0c", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_b6419656-0eb5-4c8c-8241-93af6952868d", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_453a4a6d-4b77-4ec1-ba0e-edb056ab1ac4", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_ee7c5fef-0c2d-4a1e-a073-e337dbe5b311", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_252ae76d-4b8c-4807-a004-6b4bdad75037", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_7e8634d7-6b47-4ea4-b3db-5186b187715a", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0d9a6ca0-ed29-4f86-93f4-59e96dab0ad0", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_3e31c46c-b32f-4959-9a53-201c8408d9e9", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_719ed096-dc34-4bef-aaec-028986cfdc73", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_888bbda5-f93b-448d-999a-6f5aec86bf85", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_944fad4a-2541-44ff-8f88-0a5aa7a9d659", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_ec9d7b54-0513-4743-af0d-4e6eba7f6b69", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_bfcf524f-45ab-4556-9d14-295466cee5d8", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_cd75a1d7-f19f-4f85-8be1-6562eb87c8fd", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0044477d-d23e-45ef-b010-627e63913d18", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0356d089-f691-4468-abd8-398da2ffa06e", 
+                        "value": 1
+                    }, 
+                    {
+                        "magnitude": 1911672.9101517377, 
+                        "angle": -28.69155914733355, 
+                        "measurement_mrid": "_10db7f16-400b-4dc8-8f6c-1664931817aa"
+                    }, 
+                    {
+                        "magnitude": 1940908.7251142215, 
+                        "angle": -25.77952367669995, 
+                        "measurement_mrid": "_2e0d7858-974f-403e-8631-4da1235f30b5"
+                    }, 
+                    {
+                        "magnitude": 1911672.9101517377, 
+                        "angle": -28.69155914733355, 
+                        "measurement_mrid": "_4194433d-1813-49c8-b02d-6252a346b97c"
+                    }, 
+                    {
+                        "magnitude": 1940908.7251142215, 
+                        "angle": -25.77952367669995, 
+                        "measurement_mrid": "_6c41b9f1-8bbe-45ec-b5ad-f48ccada98c2"
+                    }, 
+                    {
+                        "magnitude": 1841070.1858534368, 
+                        "angle": -26.436245837472367, 
+                        "measurement_mrid": "_80b4ce92-af77-485c-a8eb-f242f574bc8a"
+                    }, 
+                    {
+                        "magnitude": 1841070.1858534368, 
+                        "angle": -26.436245837472367, 
+                        "measurement_mrid": "_f23418a5-db39-4509-9d80-754626773ad4"
+                    }, 
+                    {
+                        "measurement_mrid": "_2b832429-a785-4724-b109-e361efe97f05", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_5664c773-77df-47e6-9b40-2b7341723e63", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_6e50c5a6-bda1-476b-8fcf-7d672358c4ac", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_738fcb1a-8144-487b-a189-611f8f952e0c", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_ec56f22d-7eab-4d12-ad2b-9c2791019262", 
+                        "value": 6
+                    }, 
+                    {
+                        "measurement_mrid": "_f499bf6a-f8d7-425d-81cb-197bd4c881b2", 
+                        "value": 6
+                    }, 
+                    {
+                        "magnitude": 7228.30263089102, 
+                        "angle": -150.57436789764446, 
+                        "measurement_mrid": "_11e4ede6-0dbf-494a-9950-e71058dfc599"
+                    }, 
+                    {
+                        "magnitude": 7229.266390708843, 
+                        "angle": -30.593844324347394, 
+                        "measurement_mrid": "_709c9f09-87ea-4027-969b-41050b6ef8fe"
+                    }, 
+                    {
+                        "magnitude": 7229.186356080894, 
+                        "angle": 89.46283553599254, 
+                        "measurement_mrid": "_f7412f91-4ae7-4adc-8442-47756decd6f8"
+                    }, 
+                    {
+                        "measurement_mrid": "_78b11383-793e-40b8-afdc-2acb3f790218", 
+                        "value": 4
+                    }, 
+                    {
+                        "measurement_mrid": "_990c6ef2-801d-48be-8256-ec82e0cedb44", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_aea61d9e-9d77-49d6-91da-f14cfed81815", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_be28ddc6-eb3e-47bb-87c5-53d71b02a61c", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_cc49318c-0f92-4a12-9222-6aa6538736c0", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_d4fd34ed-53aa-411e-b74a-89f8972b5064", 
+                        "value": 4
+                    }
+                ]
+            }
+        }, 
+        "2": {
+            "simulation_id": "1062097031", 
+            "message": {
+                "timestamp": "2018-05-18 17:07:25.094834", 
+                "measurements": [
+                    {
+                        "measurement_mrid": "_74653361-3b39-41af-8592-def0653ea623", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_8f100920-469e-45c1-b9c7-55c0d601b0e7", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_4cb1b7aa-7a19-49a0-9261-2d6dc340292d", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_5daba227-ee21-4266-b00c-76d693f5c436", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_652a49a1-96ea-48a2-9906-8c170abcba7f", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_6909db32-a7cb-41e6-8244-2f1250bdfe9e", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_ae7627a8-6078-4d98-b28e-4331e16d3260", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_f8305ddf-391c-4002-aea9-00160603c0c3", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_11f91eab-070c-43bd-bfde-330f538885fa", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_551a5188-4850-4979-ad18-6c30091e7b57", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_267646f2-b03e-458c-ae76-0730a9cbaaf1", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_c00e1902-cd87-4182-8367-c8f0ea97c552", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0dcbe27c-471c-4604-8e5c-83bc52318258", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_42b7689a-0321-43ba-9d4a-0c257ccb23be", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_36df2d8b-2906-4c33-9f0d-1c42fefdda9f", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_3783e729-3328-4983-9db7-23f6befa3536", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_59f92d0d-7e9b-45dc-bf67-b17510fcc22a", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_a929c951-c185-4eb1-bdf7-010be27dedc6", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_bb1eda2e-c31d-4180-964a-3ab906b8d629", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_ca7585ec-e609-4eb8-b0ce-9f44dc42e918", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_577f7bfb-2fd4-43ba-897b-c5d750a70b0c", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_b6419656-0eb5-4c8c-8241-93af6952868d", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_453a4a6d-4b77-4ec1-ba0e-edb056ab1ac4", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_ee7c5fef-0c2d-4a1e-a073-e337dbe5b311", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_252ae76d-4b8c-4807-a004-6b4bdad75037", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_7e8634d7-6b47-4ea4-b3db-5186b187715a", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0d9a6ca0-ed29-4f86-93f4-59e96dab0ad0", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_3e31c46c-b32f-4959-9a53-201c8408d9e9", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_719ed096-dc34-4bef-aaec-028986cfdc73", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_888bbda5-f93b-448d-999a-6f5aec86bf85", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_944fad4a-2541-44ff-8f88-0a5aa7a9d659", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_ec9d7b54-0513-4743-af0d-4e6eba7f6b69", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_bfcf524f-45ab-4556-9d14-295466cee5d8", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_cd75a1d7-f19f-4f85-8be1-6562eb87c8fd", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0044477d-d23e-45ef-b010-627e63913d18", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0356d089-f691-4468-abd8-398da2ffa06e", 
+                        "value": 1
+                    }, 
+                    {
+                        "magnitude": 1911357.5363708814, 
+                        "angle": -28.67637929518117, 
+                        "measurement_mrid": "_10db7f16-400b-4dc8-8f6c-1664931817aa"
+                    }, 
+                    {
+                        "magnitude": 1940515.28934073, 
+                        "angle": -25.78501094387659, 
+                        "measurement_mrid": "_2e0d7858-974f-403e-8631-4da1235f30b5"
+                    }, 
+                    {
+                        "magnitude": 1911357.5363708814, 
+                        "angle": -28.67637929518117, 
+                        "measurement_mrid": "_4194433d-1813-49c8-b02d-6252a346b97c"
+                    }, 
+                    {
+                        "magnitude": 1940515.28934073, 
+                        "angle": -25.78501094387659, 
+                        "measurement_mrid": "_6c41b9f1-8bbe-45ec-b5ad-f48ccada98c2"
+                    }, 
+                    {
+                        "magnitude": 1841340.7117249288, 
+                        "angle": -26.433729286227152, 
+                        "measurement_mrid": "_80b4ce92-af77-485c-a8eb-f242f574bc8a"
+                    }, 
+                    {
+                        "magnitude": 1841340.7117249288, 
+                        "angle": -26.433729286227152, 
+                        "measurement_mrid": "_f23418a5-db39-4509-9d80-754626773ad4"
+                    }, 
+                    {
+                        "measurement_mrid": "_2b832429-a785-4724-b109-e361efe97f05", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_5664c773-77df-47e6-9b40-2b7341723e63", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_6e50c5a6-bda1-476b-8fcf-7d672358c4ac", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_738fcb1a-8144-487b-a189-611f8f952e0c", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_ec56f22d-7eab-4d12-ad2b-9c2791019262", 
+                        "value": 6
+                    }, 
+                    {
+                        "measurement_mrid": "_f499bf6a-f8d7-425d-81cb-197bd4c881b2", 
+                        "value": 6
+                    }, 
+                    {
+                        "magnitude": 7228.323180845537, 
+                        "angle": -150.5744598960605, 
+                        "measurement_mrid": "_11e4ede6-0dbf-494a-9950-e71058dfc599"
+                    }, 
+                    {
+                        "magnitude": 7229.232530499269, 
+                        "angle": -30.593720791863916, 
+                        "measurement_mrid": "_709c9f09-87ea-4027-969b-41050b6ef8fe"
+                    }, 
+                    {
+                        "magnitude": 7229.177840404099, 
+                        "angle": 89.46287890824058, 
+                        "measurement_mrid": "_f7412f91-4ae7-4adc-8442-47756decd6f8"
+                    }, 
+                    {
+                        "measurement_mrid": "_78b11383-793e-40b8-afdc-2acb3f790218", 
+                        "value": 4
+                    }, 
+                    {
+                        "measurement_mrid": "_990c6ef2-801d-48be-8256-ec82e0cedb44", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_aea61d9e-9d77-49d6-91da-f14cfed81815", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_be28ddc6-eb3e-47bb-87c5-53d71b02a61c", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_cc49318c-0f92-4a12-9222-6aa6538736c0", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_d4fd34ed-53aa-411e-b74a-89f8972b5064", 
+                        "value": 4
+                    }
+                ]
+            }
+        }, 
+        "5": {
+            "simulation_id": "1062097031", 
+            "message": {
+                "timestamp": "2018-05-18 17:07:28.849891", 
+                "measurements": [
+                    {
+                        "measurement_mrid": "_74653361-3b39-41af-8592-def0653ea623", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_8f100920-469e-45c1-b9c7-55c0d601b0e7", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_4cb1b7aa-7a19-49a0-9261-2d6dc340292d", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_5daba227-ee21-4266-b00c-76d693f5c436", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_652a49a1-96ea-48a2-9906-8c170abcba7f", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_6909db32-a7cb-41e6-8244-2f1250bdfe9e", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_ae7627a8-6078-4d98-b28e-4331e16d3260", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_f8305ddf-391c-4002-aea9-00160603c0c3", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_11f91eab-070c-43bd-bfde-330f538885fa", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_551a5188-4850-4979-ad18-6c30091e7b57", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_267646f2-b03e-458c-ae76-0730a9cbaaf1", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_c00e1902-cd87-4182-8367-c8f0ea97c552", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0dcbe27c-471c-4604-8e5c-83bc52318258", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_42b7689a-0321-43ba-9d4a-0c257ccb23be", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_36df2d8b-2906-4c33-9f0d-1c42fefdda9f", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_3783e729-3328-4983-9db7-23f6befa3536", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_59f92d0d-7e9b-45dc-bf67-b17510fcc22a", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_a929c951-c185-4eb1-bdf7-010be27dedc6", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_bb1eda2e-c31d-4180-964a-3ab906b8d629", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_ca7585ec-e609-4eb8-b0ce-9f44dc42e918", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_577f7bfb-2fd4-43ba-897b-c5d750a70b0c", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_b6419656-0eb5-4c8c-8241-93af6952868d", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_453a4a6d-4b77-4ec1-ba0e-edb056ab1ac4", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_ee7c5fef-0c2d-4a1e-a073-e337dbe5b311", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_252ae76d-4b8c-4807-a004-6b4bdad75037", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_7e8634d7-6b47-4ea4-b3db-5186b187715a", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0d9a6ca0-ed29-4f86-93f4-59e96dab0ad0", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_3e31c46c-b32f-4959-9a53-201c8408d9e9", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_719ed096-dc34-4bef-aaec-028986cfdc73", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_888bbda5-f93b-448d-999a-6f5aec86bf85", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_944fad4a-2541-44ff-8f88-0a5aa7a9d659", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_ec9d7b54-0513-4743-af0d-4e6eba7f6b69", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_bfcf524f-45ab-4556-9d14-295466cee5d8", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_cd75a1d7-f19f-4f85-8be1-6562eb87c8fd", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0044477d-d23e-45ef-b010-627e63913d18", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0356d089-f691-4468-abd8-398da2ffa06e", 
+                        "value": 1
+                    }, 
+                    {
+                        "magnitude": 1911623.9445234744, 
+                        "angle": -28.690167334443277, 
+                        "measurement_mrid": "_10db7f16-400b-4dc8-8f6c-1664931817aa"
+                    }, 
+                    {
+                        "magnitude": 1940888.3354106178, 
+                        "angle": -25.781041157007838, 
+                        "measurement_mrid": "_2e0d7858-974f-403e-8631-4da1235f30b5"
+                    }, 
+                    {
+                        "magnitude": 1911623.9445234744, 
+                        "angle": -28.690167334443277, 
+                        "measurement_mrid": "_4194433d-1813-49c8-b02d-6252a346b97c"
+                    }, 
+                    {
+                        "magnitude": 1940888.3354106178, 
+                        "angle": -25.781041157007838, 
+                        "measurement_mrid": "_6c41b9f1-8bbe-45ec-b5ad-f48ccada98c2"
+                    }, 
+                    {
+                        "magnitude": 1841123.3057400556, 
+                        "angle": -26.43556153779431, 
+                        "measurement_mrid": "_80b4ce92-af77-485c-a8eb-f242f574bc8a"
+                    }, 
+                    {
+                        "magnitude": 1841123.3057400556, 
+                        "angle": -26.43556153779431, 
+                        "measurement_mrid": "_f23418a5-db39-4509-9d80-754626773ad4"
+                    }, 
+                    {
+                        "measurement_mrid": "_2b832429-a785-4724-b109-e361efe97f05", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_5664c773-77df-47e6-9b40-2b7341723e63", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_6e50c5a6-bda1-476b-8fcf-7d672358c4ac", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_738fcb1a-8144-487b-a189-611f8f952e0c", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_ec56f22d-7eab-4d12-ad2b-9c2791019262", 
+                        "value": 6
+                    }, 
+                    {
+                        "measurement_mrid": "_f499bf6a-f8d7-425d-81cb-197bd4c881b2", 
+                        "value": 6
+                    }, 
+                    {
+                        "magnitude": 7228.30683551044, 
+                        "angle": -150.57438557742964, 
+                        "measurement_mrid": "_11e4ede6-0dbf-494a-9950-e71058dfc599"
+                    }, 
+                    {
+                        "magnitude": 7229.263495495888, 
+                        "angle": -30.59383474439065, 
+                        "measurement_mrid": "_709c9f09-87ea-4027-969b-41050b6ef8fe"
+                    }, 
+                    {
+                        "magnitude": 7229.184130206235, 
+                        "angle": 89.46284549205798, 
+                        "measurement_mrid": "_f7412f91-4ae7-4adc-8442-47756decd6f8"
+                    }, 
+                    {
+                        "measurement_mrid": "_78b11383-793e-40b8-afdc-2acb3f790218", 
+                        "value": 4
+                    }, 
+                    {
+                        "measurement_mrid": "_990c6ef2-801d-48be-8256-ec82e0cedb44", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_aea61d9e-9d77-49d6-91da-f14cfed81815", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_be28ddc6-eb3e-47bb-87c5-53d71b02a61c", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_cc49318c-0f92-4a12-9222-6aa6538736c0", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_d4fd34ed-53aa-411e-b74a-89f8972b5064", 
+                        "value": 4
+                    }
+                ]
+            }
+        }, 
+        "4": {
+            "simulation_id": "1062097031", 
+            "message": {
+                "timestamp": "2018-05-18 17:07:27.444568", 
+                "measurements": [
+                    {
+                        "measurement_mrid": "_74653361-3b39-41af-8592-def0653ea623", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_8f100920-469e-45c1-b9c7-55c0d601b0e7", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_4cb1b7aa-7a19-49a0-9261-2d6dc340292d", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_5daba227-ee21-4266-b00c-76d693f5c436", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_652a49a1-96ea-48a2-9906-8c170abcba7f", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_6909db32-a7cb-41e6-8244-2f1250bdfe9e", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_ae7627a8-6078-4d98-b28e-4331e16d3260", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_f8305ddf-391c-4002-aea9-00160603c0c3", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_11f91eab-070c-43bd-bfde-330f538885fa", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_551a5188-4850-4979-ad18-6c30091e7b57", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_267646f2-b03e-458c-ae76-0730a9cbaaf1", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_c00e1902-cd87-4182-8367-c8f0ea97c552", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0dcbe27c-471c-4604-8e5c-83bc52318258", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_42b7689a-0321-43ba-9d4a-0c257ccb23be", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_36df2d8b-2906-4c33-9f0d-1c42fefdda9f", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_3783e729-3328-4983-9db7-23f6befa3536", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_59f92d0d-7e9b-45dc-bf67-b17510fcc22a", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_a929c951-c185-4eb1-bdf7-010be27dedc6", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_bb1eda2e-c31d-4180-964a-3ab906b8d629", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_ca7585ec-e609-4eb8-b0ce-9f44dc42e918", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_577f7bfb-2fd4-43ba-897b-c5d750a70b0c", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_b6419656-0eb5-4c8c-8241-93af6952868d", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_453a4a6d-4b77-4ec1-ba0e-edb056ab1ac4", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_ee7c5fef-0c2d-4a1e-a073-e337dbe5b311", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_252ae76d-4b8c-4807-a004-6b4bdad75037", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_7e8634d7-6b47-4ea4-b3db-5186b187715a", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0d9a6ca0-ed29-4f86-93f4-59e96dab0ad0", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_3e31c46c-b32f-4959-9a53-201c8408d9e9", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_719ed096-dc34-4bef-aaec-028986cfdc73", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_888bbda5-f93b-448d-999a-6f5aec86bf85", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_944fad4a-2541-44ff-8f88-0a5aa7a9d659", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_ec9d7b54-0513-4743-af0d-4e6eba7f6b69", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_bfcf524f-45ab-4556-9d14-295466cee5d8", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_cd75a1d7-f19f-4f85-8be1-6562eb87c8fd", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0044477d-d23e-45ef-b010-627e63913d18", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0356d089-f691-4468-abd8-398da2ffa06e", 
+                        "value": 1
+                    }, 
+                    {
+                        "magnitude": 1911614.6123923997, 
+                        "angle": -28.690094767098472, 
+                        "measurement_mrid": "_10db7f16-400b-4dc8-8f6c-1664931817aa"
+                    }, 
+                    {
+                        "magnitude": 1940892.0751309684, 
+                        "angle": -25.781319962321724, 
+                        "measurement_mrid": "_2e0d7858-974f-403e-8631-4da1235f30b5"
+                    }, 
+                    {
+                        "magnitude": 1911614.6123923997, 
+                        "angle": -28.690094767098472, 
+                        "measurement_mrid": "_4194433d-1813-49c8-b02d-6252a346b97c"
+                    }, 
+                    {
+                        "magnitude": 1940892.0751309684, 
+                        "angle": -25.781319962321724, 
+                        "measurement_mrid": "_6c41b9f1-8bbe-45ec-b5ad-f48ccada98c2"
+                    }, 
+                    {
+                        "magnitude": 1841131.1692992202, 
+                        "angle": -26.43531203405272, 
+                        "measurement_mrid": "_80b4ce92-af77-485c-a8eb-f242f574bc8a"
+                    }, 
+                    {
+                        "magnitude": 1841131.1692992202, 
+                        "angle": -26.43531203405272, 
+                        "measurement_mrid": "_f23418a5-db39-4509-9d80-754626773ad4"
+                    }, 
+                    {
+                        "measurement_mrid": "_2b832429-a785-4724-b109-e361efe97f05", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_5664c773-77df-47e6-9b40-2b7341723e63", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_6e50c5a6-bda1-476b-8fcf-7d672358c4ac", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_738fcb1a-8144-487b-a189-611f8f952e0c", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_ec56f22d-7eab-4d12-ad2b-9c2791019262", 
+                        "value": 6
+                    }, 
+                    {
+                        "measurement_mrid": "_f499bf6a-f8d7-425d-81cb-197bd4c881b2", 
+                        "value": 6
+                    }, 
+                    {
+                        "magnitude": 7228.3075400767, 
+                        "angle": -150.57438845457614, 
+                        "measurement_mrid": "_11e4ede6-0dbf-494a-9950-e71058dfc599"
+                    }, 
+                    {
+                        "magnitude": 7229.263450785131, 
+                        "angle": -30.593835312986233, 
+                        "measurement_mrid": "_709c9f09-87ea-4027-969b-41050b6ef8fe"
+                    }, 
+                    {
+                        "magnitude": 7229.183455170157, 
+                        "angle": 89.46284803369136, 
+                        "measurement_mrid": "_f7412f91-4ae7-4adc-8442-47756decd6f8"
+                    }, 
+                    {
+                        "measurement_mrid": "_78b11383-793e-40b8-afdc-2acb3f790218", 
+                        "value": 4
+                    }, 
+                    {
+                        "measurement_mrid": "_990c6ef2-801d-48be-8256-ec82e0cedb44", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_aea61d9e-9d77-49d6-91da-f14cfed81815", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_be28ddc6-eb3e-47bb-87c5-53d71b02a61c", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_cc49318c-0f92-4a12-9222-6aa6538736c0", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_d4fd34ed-53aa-411e-b74a-89f8972b5064", 
+                        "value": 4
+                    }
+                ]
+            }
+        }, 
+        "7": {
+            "simulation_id": "1062097031", 
+            "message": {
+                "timestamp": "2018-05-18 17:07:30.778947", 
+                "measurements": [
+                    {
+                        "measurement_mrid": "_74653361-3b39-41af-8592-def0653ea623", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_8f100920-469e-45c1-b9c7-55c0d601b0e7", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_4cb1b7aa-7a19-49a0-9261-2d6dc340292d", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_5daba227-ee21-4266-b00c-76d693f5c436", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_652a49a1-96ea-48a2-9906-8c170abcba7f", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_6909db32-a7cb-41e6-8244-2f1250bdfe9e", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_ae7627a8-6078-4d98-b28e-4331e16d3260", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_f8305ddf-391c-4002-aea9-00160603c0c3", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_11f91eab-070c-43bd-bfde-330f538885fa", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_551a5188-4850-4979-ad18-6c30091e7b57", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_267646f2-b03e-458c-ae76-0730a9cbaaf1", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_c00e1902-cd87-4182-8367-c8f0ea97c552", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0dcbe27c-471c-4604-8e5c-83bc52318258", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_42b7689a-0321-43ba-9d4a-0c257ccb23be", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_36df2d8b-2906-4c33-9f0d-1c42fefdda9f", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_3783e729-3328-4983-9db7-23f6befa3536", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_59f92d0d-7e9b-45dc-bf67-b17510fcc22a", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_a929c951-c185-4eb1-bdf7-010be27dedc6", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_bb1eda2e-c31d-4180-964a-3ab906b8d629", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_ca7585ec-e609-4eb8-b0ce-9f44dc42e918", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_577f7bfb-2fd4-43ba-897b-c5d750a70b0c", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_b6419656-0eb5-4c8c-8241-93af6952868d", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_453a4a6d-4b77-4ec1-ba0e-edb056ab1ac4", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_ee7c5fef-0c2d-4a1e-a073-e337dbe5b311", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_252ae76d-4b8c-4807-a004-6b4bdad75037", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_7e8634d7-6b47-4ea4-b3db-5186b187715a", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0d9a6ca0-ed29-4f86-93f4-59e96dab0ad0", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_3e31c46c-b32f-4959-9a53-201c8408d9e9", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_719ed096-dc34-4bef-aaec-028986cfdc73", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_888bbda5-f93b-448d-999a-6f5aec86bf85", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_944fad4a-2541-44ff-8f88-0a5aa7a9d659", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_ec9d7b54-0513-4743-af0d-4e6eba7f6b69", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_bfcf524f-45ab-4556-9d14-295466cee5d8", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_cd75a1d7-f19f-4f85-8be1-6562eb87c8fd", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0044477d-d23e-45ef-b010-627e63913d18", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0356d089-f691-4468-abd8-398da2ffa06e", 
+                        "value": 1
+                    }, 
+                    {
+                        "magnitude": 1911624.7474718702, 
+                        "angle": -28.690201153971852, 
+                        "measurement_mrid": "_10db7f16-400b-4dc8-8f6c-1664931817aa"
+                    }, 
+                    {
+                        "magnitude": 1940889.6645888654, 
+                        "angle": -25.781065962565556, 
+                        "measurement_mrid": "_2e0d7858-974f-403e-8631-4da1235f30b5"
+                    }, 
+                    {
+                        "magnitude": 1911624.7474718702, 
+                        "angle": -28.690201153971852, 
+                        "measurement_mrid": "_4194433d-1813-49c8-b02d-6252a346b97c"
+                    }, 
+                    {
+                        "magnitude": 1940889.6645888654, 
+                        "angle": -25.781065962565556, 
+                        "measurement_mrid": "_6c41b9f1-8bbe-45ec-b5ad-f48ccada98c2"
+                    }, 
+                    {
+                        "magnitude": 1841124.0647745484, 
+                        "angle": -26.435576758972392, 
+                        "measurement_mrid": "_80b4ce92-af77-485c-a8eb-f242f574bc8a"
+                    }, 
+                    {
+                        "magnitude": 1841124.0647745484, 
+                        "angle": -26.435576758972392, 
+                        "measurement_mrid": "_f23418a5-db39-4509-9d80-754626773ad4"
+                    }, 
+                    {
+                        "measurement_mrid": "_2b832429-a785-4724-b109-e361efe97f05", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_5664c773-77df-47e6-9b40-2b7341723e63", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_6e50c5a6-bda1-476b-8fcf-7d672358c4ac", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_738fcb1a-8144-487b-a189-611f8f952e0c", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_ec56f22d-7eab-4d12-ad2b-9c2791019262", 
+                        "value": 6
+                    }, 
+                    {
+                        "measurement_mrid": "_f499bf6a-f8d7-425d-81cb-197bd4c881b2", 
+                        "value": 6
+                    }, 
+                    {
+                        "magnitude": 7228.306900813267, 
+                        "angle": -150.574386015013, 
+                        "measurement_mrid": "_11e4ede6-0dbf-494a-9950-e71058dfc599"
+                    }, 
+                    {
+                        "magnitude": 7229.263525247311, 
+                        "angle": -30.593835065335945, 
+                        "measurement_mrid": "_709c9f09-87ea-4027-969b-41050b6ef8fe"
+                    }, 
+                    {
+                        "magnitude": 7229.18417196064, 
+                        "angle": 89.46284570123579, 
+                        "measurement_mrid": "_f7412f91-4ae7-4adc-8442-47756decd6f8"
+                    }, 
+                    {
+                        "measurement_mrid": "_78b11383-793e-40b8-afdc-2acb3f790218", 
+                        "value": 4
+                    }, 
+                    {
+                        "measurement_mrid": "_990c6ef2-801d-48be-8256-ec82e0cedb44", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_aea61d9e-9d77-49d6-91da-f14cfed81815", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_be28ddc6-eb3e-47bb-87c5-53d71b02a61c", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_cc49318c-0f92-4a12-9222-6aa6538736c0", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_d4fd34ed-53aa-411e-b74a-89f8972b5064", 
+                        "value": 4
+                    }
+                ]
+            }
+        }, 
+        "6": {
+            "simulation_id": "1062097031", 
+            "message": {
+                "timestamp": "2018-05-18 17:07:29.915000", 
+                "measurements": [
+                    {
+                        "measurement_mrid": "_74653361-3b39-41af-8592-def0653ea623", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_8f100920-469e-45c1-b9c7-55c0d601b0e7", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_4cb1b7aa-7a19-49a0-9261-2d6dc340292d", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_5daba227-ee21-4266-b00c-76d693f5c436", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_652a49a1-96ea-48a2-9906-8c170abcba7f", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_6909db32-a7cb-41e6-8244-2f1250bdfe9e", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_ae7627a8-6078-4d98-b28e-4331e16d3260", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_f8305ddf-391c-4002-aea9-00160603c0c3", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_11f91eab-070c-43bd-bfde-330f538885fa", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_551a5188-4850-4979-ad18-6c30091e7b57", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_267646f2-b03e-458c-ae76-0730a9cbaaf1", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_c00e1902-cd87-4182-8367-c8f0ea97c552", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0dcbe27c-471c-4604-8e5c-83bc52318258", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_42b7689a-0321-43ba-9d4a-0c257ccb23be", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_36df2d8b-2906-4c33-9f0d-1c42fefdda9f", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_3783e729-3328-4983-9db7-23f6befa3536", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_59f92d0d-7e9b-45dc-bf67-b17510fcc22a", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_a929c951-c185-4eb1-bdf7-010be27dedc6", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_bb1eda2e-c31d-4180-964a-3ab906b8d629", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_ca7585ec-e609-4eb8-b0ce-9f44dc42e918", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_577f7bfb-2fd4-43ba-897b-c5d750a70b0c", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_b6419656-0eb5-4c8c-8241-93af6952868d", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_453a4a6d-4b77-4ec1-ba0e-edb056ab1ac4", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_ee7c5fef-0c2d-4a1e-a073-e337dbe5b311", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_252ae76d-4b8c-4807-a004-6b4bdad75037", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_7e8634d7-6b47-4ea4-b3db-5186b187715a", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0d9a6ca0-ed29-4f86-93f4-59e96dab0ad0", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_3e31c46c-b32f-4959-9a53-201c8408d9e9", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_719ed096-dc34-4bef-aaec-028986cfdc73", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_888bbda5-f93b-448d-999a-6f5aec86bf85", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_944fad4a-2541-44ff-8f88-0a5aa7a9d659", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_ec9d7b54-0513-4743-af0d-4e6eba7f6b69", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_bfcf524f-45ab-4556-9d14-295466cee5d8", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_cd75a1d7-f19f-4f85-8be1-6562eb87c8fd", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0044477d-d23e-45ef-b010-627e63913d18", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0356d089-f691-4468-abd8-398da2ffa06e", 
+                        "value": 1
+                    }, 
+                    {
+                        "magnitude": 1911622.6648555964, 
+                        "angle": -28.690181376013552, 
+                        "measurement_mrid": "_10db7f16-400b-4dc8-8f6c-1664931817aa"
+                    }, 
+                    {
+                        "magnitude": 1940888.7295669708, 
+                        "angle": -25.78106149024305, 
+                        "measurement_mrid": "_2e0d7858-974f-403e-8631-4da1235f30b5"
+                    }, 
+                    {
+                        "magnitude": 1911622.6648555964, 
+                        "angle": -28.690181376013552, 
+                        "measurement_mrid": "_4194433d-1813-49c8-b02d-6252a346b97c"
+                    }, 
+                    {
+                        "magnitude": 1940888.7295669708, 
+                        "angle": -25.78106149024305, 
+                        "measurement_mrid": "_6c41b9f1-8bbe-45ec-b5ad-f48ccada98c2"
+                    }, 
+                    {
+                        "magnitude": 1841123.0889379873, 
+                        "angle": -26.435532893276886, 
+                        "measurement_mrid": "_80b4ce92-af77-485c-a8eb-f242f574bc8a"
+                    }, 
+                    {
+                        "magnitude": 1841123.0889379873, 
+                        "angle": -26.435532893276886, 
+                        "measurement_mrid": "_f23418a5-db39-4509-9d80-754626773ad4"
+                    }, 
+                    {
+                        "measurement_mrid": "_2b832429-a785-4724-b109-e361efe97f05", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_5664c773-77df-47e6-9b40-2b7341723e63", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_6e50c5a6-bda1-476b-8fcf-7d672358c4ac", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_738fcb1a-8144-487b-a189-611f8f952e0c", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_ec56f22d-7eab-4d12-ad2b-9c2791019262", 
+                        "value": 6
+                    }, 
+                    {
+                        "measurement_mrid": "_f499bf6a-f8d7-425d-81cb-197bd4c881b2", 
+                        "value": 6
+                    }, 
+                    {
+                        "magnitude": 7228.30687052703, 
+                        "angle": -150.5743852789605, 
+                        "measurement_mrid": "_11e4ede6-0dbf-494a-9950-e71058dfc599"
+                    }, 
+                    {
+                        "magnitude": 7229.263562538129, 
+                        "angle": -30.593834973456143, 
+                        "measurement_mrid": "_709c9f09-87ea-4027-969b-41050b6ef8fe"
+                    }, 
+                    {
+                        "magnitude": 7229.184017864282, 
+                        "angle": 89.46284577697122, 
+                        "measurement_mrid": "_f7412f91-4ae7-4adc-8442-47756decd6f8"
+                    }, 
+                    {
+                        "measurement_mrid": "_78b11383-793e-40b8-afdc-2acb3f790218", 
+                        "value": 4
+                    }, 
+                    {
+                        "measurement_mrid": "_990c6ef2-801d-48be-8256-ec82e0cedb44", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_aea61d9e-9d77-49d6-91da-f14cfed81815", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_be28ddc6-eb3e-47bb-87c5-53d71b02a61c", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_cc49318c-0f92-4a12-9222-6aa6538736c0", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_d4fd34ed-53aa-411e-b74a-89f8972b5064", 
+                        "value": 4
+                    }
+                ]
+            }
+        }, 
+        "9": {
+            "simulation_id": "1062097031", 
+            "message": {
+                "timestamp": "2018-05-18 17:07:33.606872", 
+                "measurements": [
+                    {
+                        "measurement_mrid": "_74653361-3b39-41af-8592-def0653ea623", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_8f100920-469e-45c1-b9c7-55c0d601b0e7", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_4cb1b7aa-7a19-49a0-9261-2d6dc340292d", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_5daba227-ee21-4266-b00c-76d693f5c436", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_652a49a1-96ea-48a2-9906-8c170abcba7f", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_6909db32-a7cb-41e6-8244-2f1250bdfe9e", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_ae7627a8-6078-4d98-b28e-4331e16d3260", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_f8305ddf-391c-4002-aea9-00160603c0c3", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_11f91eab-070c-43bd-bfde-330f538885fa", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_551a5188-4850-4979-ad18-6c30091e7b57", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_267646f2-b03e-458c-ae76-0730a9cbaaf1", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_c00e1902-cd87-4182-8367-c8f0ea97c552", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_0dcbe27c-471c-4604-8e5c-83bc52318258", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_42b7689a-0321-43ba-9d4a-0c257ccb23be", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_36df2d8b-2906-4c33-9f0d-1c42fefdda9f", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_3783e729-3328-4983-9db7-23f6befa3536", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_59f92d0d-7e9b-45dc-bf67-b17510fcc22a", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_a929c951-c185-4eb1-bdf7-010be27dedc6", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_bb1eda2e-c31d-4180-964a-3ab906b8d629", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_ca7585ec-e609-4eb8-b0ce-9f44dc42e918", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_577f7bfb-2fd4-43ba-897b-c5d750a70b0c", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_b6419656-0eb5-4c8c-8241-93af6952868d", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_453a4a6d-4b77-4ec1-ba0e-edb056ab1ac4", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_ee7c5fef-0c2d-4a1e-a073-e337dbe5b311", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_252ae76d-4b8c-4807-a004-6b4bdad75037", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_7e8634d7-6b47-4ea4-b3db-5186b187715a", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_0d9a6ca0-ed29-4f86-93f4-59e96dab0ad0", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_3e31c46c-b32f-4959-9a53-201c8408d9e9", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_719ed096-dc34-4bef-aaec-028986cfdc73", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_888bbda5-f93b-448d-999a-6f5aec86bf85", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_944fad4a-2541-44ff-8f88-0a5aa7a9d659", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_ec9d7b54-0513-4743-af0d-4e6eba7f6b69", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_bfcf524f-45ab-4556-9d14-295466cee5d8", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_cd75a1d7-f19f-4f85-8be1-6562eb87c8fd", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_0044477d-d23e-45ef-b010-627e63913d18", 
+                        "value": 0
+                    }, 
+                    {
+                        "measurement_mrid": "_0356d089-f691-4468-abd8-398da2ffa06e", 
+                        "value": 0
+                    }, 
+                    {
+                        "magnitude": 1703997.7422509985, 
+                        "angle": 16.88720330756268, 
+                        "measurement_mrid": "_10db7f16-400b-4dc8-8f6c-1664931817aa"
+                    }, 
+                    {
+                        "magnitude": 1747844.6274450782, 
+                        "angle": 20.18138178794681, 
+                        "measurement_mrid": "_2e0d7858-974f-403e-8631-4da1235f30b5"
+                    }, 
+                    {
+                        "magnitude": 1703997.7422509985, 
+                        "angle": 16.88720330756268, 
+                        "measurement_mrid": "_4194433d-1813-49c8-b02d-6252a346b97c"
+                    }, 
+                    {
+                        "magnitude": 1747844.6274450782, 
+                        "angle": 20.18138178794681, 
+                        "measurement_mrid": "_6c41b9f1-8bbe-45ec-b5ad-f48ccada98c2"
+                    }, 
+                    {
+                        "magnitude": 1639737.7674171529, 
+                        "angle": 19.882747749183046, 
+                        "measurement_mrid": "_80b4ce92-af77-485c-a8eb-f242f574bc8a"
+                    }, 
+                    {
+                        "magnitude": 1639737.7674171529, 
+                        "angle": 19.882747749183046, 
+                        "measurement_mrid": "_f23418a5-db39-4509-9d80-754626773ad4"
+                    }, 
+                    {
+                        "measurement_mrid": "_2b832429-a785-4724-b109-e361efe97f05", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_5664c773-77df-47e6-9b40-2b7341723e63", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_6e50c5a6-bda1-476b-8fcf-7d672358c4ac", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_738fcb1a-8144-487b-a189-611f8f952e0c", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_ec56f22d-7eab-4d12-ad2b-9c2791019262", 
+                        "value": 6
+                    }, 
+                    {
+                        "measurement_mrid": "_f499bf6a-f8d7-425d-81cb-197bd4c881b2", 
+                        "value": 6
+                    }, 
+                    {
+                        "magnitude": 7170.51660839493, 
+                        "angle": -150.50663246625584, 
+                        "measurement_mrid": "_11e4ede6-0dbf-494a-9950-e71058dfc599"
+                    }, 
+                    {
+                        "magnitude": 7170.0863617101, 
+                        "angle": -30.526554824911656, 
+                        "measurement_mrid": "_709c9f09-87ea-4027-969b-41050b6ef8fe"
+                    }, 
+                    {
+                        "magnitude": 7174.718641678456, 
+                        "angle": 89.51776370298106, 
+                        "measurement_mrid": "_f7412f91-4ae7-4adc-8442-47756decd6f8"
+                    }, 
+                    {
+                        "measurement_mrid": "_78b11383-793e-40b8-afdc-2acb3f790218", 
+                        "value": 4
+                    }, 
+                    {
+                        "measurement_mrid": "_990c6ef2-801d-48be-8256-ec82e0cedb44", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_aea61d9e-9d77-49d6-91da-f14cfed81815", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_be28ddc6-eb3e-47bb-87c5-53d71b02a61c", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_cc49318c-0f92-4a12-9222-6aa6538736c0", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_d4fd34ed-53aa-411e-b74a-89f8972b5064", 
+                        "value": 4
+                    }
+                ]
+            }
+        }, 
+        "8": {
+            "simulation_id": "1062097031", 
+            "message": {
+                "timestamp": "2018-05-18 17:07:32.013457", 
+                "measurements": [
+                    {
+                        "measurement_mrid": "_74653361-3b39-41af-8592-def0653ea623", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_8f100920-469e-45c1-b9c7-55c0d601b0e7", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_4cb1b7aa-7a19-49a0-9261-2d6dc340292d", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_5daba227-ee21-4266-b00c-76d693f5c436", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_652a49a1-96ea-48a2-9906-8c170abcba7f", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_6909db32-a7cb-41e6-8244-2f1250bdfe9e", 
+                        "value": 16
+                    }, 
+                    {
+                        "measurement_mrid": "_ae7627a8-6078-4d98-b28e-4331e16d3260", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_f8305ddf-391c-4002-aea9-00160603c0c3", 
+                        "value": 10
+                    }, 
+                    {
+                        "measurement_mrid": "_11f91eab-070c-43bd-bfde-330f538885fa", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_551a5188-4850-4979-ad18-6c30091e7b57", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_267646f2-b03e-458c-ae76-0730a9cbaaf1", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_c00e1902-cd87-4182-8367-c8f0ea97c552", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0dcbe27c-471c-4604-8e5c-83bc52318258", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_42b7689a-0321-43ba-9d4a-0c257ccb23be", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_36df2d8b-2906-4c33-9f0d-1c42fefdda9f", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_3783e729-3328-4983-9db7-23f6befa3536", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_59f92d0d-7e9b-45dc-bf67-b17510fcc22a", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_a929c951-c185-4eb1-bdf7-010be27dedc6", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_bb1eda2e-c31d-4180-964a-3ab906b8d629", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_ca7585ec-e609-4eb8-b0ce-9f44dc42e918", 
+                        "value": 2
+                    }, 
+                    {
+                        "measurement_mrid": "_577f7bfb-2fd4-43ba-897b-c5d750a70b0c", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_b6419656-0eb5-4c8c-8241-93af6952868d", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_453a4a6d-4b77-4ec1-ba0e-edb056ab1ac4", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_ee7c5fef-0c2d-4a1e-a073-e337dbe5b311", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_252ae76d-4b8c-4807-a004-6b4bdad75037", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_7e8634d7-6b47-4ea4-b3db-5186b187715a", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0d9a6ca0-ed29-4f86-93f4-59e96dab0ad0", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_3e31c46c-b32f-4959-9a53-201c8408d9e9", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_719ed096-dc34-4bef-aaec-028986cfdc73", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_888bbda5-f93b-448d-999a-6f5aec86bf85", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_944fad4a-2541-44ff-8f88-0a5aa7a9d659", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_ec9d7b54-0513-4743-af0d-4e6eba7f6b69", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_bfcf524f-45ab-4556-9d14-295466cee5d8", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_cd75a1d7-f19f-4f85-8be1-6562eb87c8fd", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0044477d-d23e-45ef-b010-627e63913d18", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_0356d089-f691-4468-abd8-398da2ffa06e", 
+                        "value": 1
+                    }, 
+                    {
+                        "magnitude": 1911622.8106195098, 
+                        "angle": -28.690163362031292, 
+                        "measurement_mrid": "_10db7f16-400b-4dc8-8f6c-1664931817aa"
+                    }, 
+                    {
+                        "magnitude": 1940888.324566626, 
+                        "angle": -25.781052149060198, 
+                        "measurement_mrid": "_2e0d7858-974f-403e-8631-4da1235f30b5"
+                    }, 
+                    {
+                        "magnitude": 1911622.8106195098, 
+                        "angle": -28.690163362031292, 
+                        "measurement_mrid": "_4194433d-1813-49c8-b02d-6252a346b97c"
+                    }, 
+                    {
+                        "magnitude": 1940888.324566626, 
+                        "angle": -25.781052149060198, 
+                        "measurement_mrid": "_6c41b9f1-8bbe-45ec-b5ad-f48ccada98c2"
+                    }, 
+                    {
+                        "magnitude": 1841123.2144119646, 
+                        "angle": -26.435534360876314, 
+                        "measurement_mrid": "_80b4ce92-af77-485c-a8eb-f242f574bc8a"
+                    }, 
+                    {
+                        "magnitude": 1841123.2144119646, 
+                        "angle": -26.435534360876314, 
+                        "measurement_mrid": "_f23418a5-db39-4509-9d80-754626773ad4"
+                    }, 
+                    {
+                        "measurement_mrid": "_2b832429-a785-4724-b109-e361efe97f05", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_5664c773-77df-47e6-9b40-2b7341723e63", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_6e50c5a6-bda1-476b-8fcf-7d672358c4ac", 
+                        "value": 1
+                    }, 
+                    {
+                        "measurement_mrid": "_738fcb1a-8144-487b-a189-611f8f952e0c", 
+                        "value": 9
+                    }, 
+                    {
+                        "measurement_mrid": "_ec56f22d-7eab-4d12-ad2b-9c2791019262", 
+                        "value": 6
+                    }, 
+                    {
+                        "measurement_mrid": "_f499bf6a-f8d7-425d-81cb-197bd4c881b2", 
+                        "value": 6
+                    }, 
+                    {
+                        "magnitude": 7228.306876177621, 
+                        "angle": -150.5743853770296, 
+                        "measurement_mrid": "_11e4ede6-0dbf-494a-9950-e71058dfc599"
+                    }, 
+                    {
+                        "magnitude": 7229.263512643046, 
+                        "angle": -30.59383495866976, 
+                        "measurement_mrid": "_709c9f09-87ea-4027-969b-41050b6ef8fe"
+                    }, 
+                    {
+                        "magnitude": 7229.184027845094, 
+                        "angle": 89.4628457935648, 
+                        "measurement_mrid": "_f7412f91-4ae7-4adc-8442-47756decd6f8"
+                    }, 
+                    {
+                        "measurement_mrid": "_78b11383-793e-40b8-afdc-2acb3f790218", 
+                        "value": 4
+                    }, 
+                    {
+                        "measurement_mrid": "_990c6ef2-801d-48be-8256-ec82e0cedb44", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_aea61d9e-9d77-49d6-91da-f14cfed81815", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_be28ddc6-eb3e-47bb-87c5-53d71b02a61c", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_cc49318c-0f92-4a12-9222-6aa6538736c0", 
+                        "value": 11
+                    }, 
+                    {
+                        "measurement_mrid": "_d4fd34ed-53aa-411e-b74a-89f8972b5064", 
+                        "value": 4
+                    }
+                ]
+            }
+        }
+    }
+}
