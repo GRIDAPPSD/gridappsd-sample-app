@@ -47,7 +47,7 @@ def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_en
     testInput = ruleset(topic)
 
     shunt_dict = defaultdict(lambda: {'count':0})
-    shunt_threshold = 2
+    shunt_threshold = 5
 
     switch_dict = defaultdict(lambda: {'count':0})
     switch_threshold = 2
