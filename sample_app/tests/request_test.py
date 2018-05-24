@@ -22,7 +22,6 @@ def _startTest(username,password,gossServer='localhost',stompPort='61613', simul
             "simulationID": 1234,
             "rulePort": 5000,
             "topic":"input",
-            # "expectedResult":loc+"/expected_result_series.json"
             "expectedResult":loc + "/expected_result_series_filtered_8500.json"
             }
 
