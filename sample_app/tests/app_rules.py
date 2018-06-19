@@ -8,6 +8,8 @@ import json
 import math
 import getpass
 
+import gridappsd_rules
+
 from gridappsd import GOSS
 goss = GOSS()
 goss.connect()
@@ -29,9 +31,9 @@ def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_en
         logMsg['timestamp'] = now.strftime("%Y-%m-%d %H:%M:%S")
         t_now = datetime.datetime.utcnow()
         logMsg['timestamp'] = int(time.mktime(t_now.timetuple()) * 1000) + t_now.microsecond
-        print logMsg['timestamp']
+        # print logMsg['timestamp']
         logMsgStr = json.dumps(logMsg)
-        goss.send(body=logMsgStr, destination=goss_log)
+        goss.send(goss_log, logMsgStr)
 
     logMsg = {
         # 'id': 401,
@@ -47,7 +49,7 @@ def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_en
     testInput = ruleset(topic)
 
     shunt_dict = defaultdict(lambda: {'count':0})
-    shunt_threshold = 5
+    shunt_threshold = 4
 
     switch_dict = defaultdict(lambda: {'count':0})
     switch_threshold = 2
@@ -62,6 +64,9 @@ def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_en
                                 u'_709c9f09-87ea-4027-969b-41050b6ef8fe': u'PowerTransformer_hvmv_sub_Voltage_A',
                                 u'_f7412f91-4ae7-4adc-8442-47756decd6f8': u'PowerTransformer_hvmv_sub_Voltage_C'}
 
+        transformer_voltages = gridappsd_rules.get_trmid()
+        print transformer_voltages.keys()
+
         @when_all(+m.message.measurements)
         def node_meas_check(c):
             # consequent
@@ -75,11 +80,12 @@ def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_en
 
         def check_voltage(c, mrid, mag, ang, base_kv):
             c_temp = complex(mag, ang)
+            base_kv = float(transformer_voltages[mrid]['base_voltage']) / 3
             volt_pu = (math.sqrt(c_temp.real ** 2 + c_temp.imag ** 2) / (base_kv)) / math.sqrt(3)
-            print ("Magnitude check " + str(volt_pu))
+            # print ("Magnitude check " + str(volt_pu))
             if volt_pu < .95 or volt_pu > 1.05:
-                print (transformer_voltages[mrid] + " voltage p.u. out of threshold " + str(volt_pu) + " at " + c.m.message.timestamp)
-                send_log_msg(transformer_voltages[mrid] + " voltage p.u. out of threshold " + str(volt_pu) + " at " + c.m.message.timestamp)
+                print (mrid + ' ' + transformer_voltages[mrid]['name'] + ' ' + transformer_voltages[mrid]['phases'] + " voltage p.u. out of threshold " + str(volt_pu) + " at " + c.m.message.timestamp)
+                send_log_msg(transformer_voltages[mrid]['name'] + " voltage p.u. out of threshold " + str(volt_pu) + " at " + c.m.message.timestamp)
 
         # A Reverse and a Forward difference is a state change.
         @when_all((m.message.reverse_difference.attribute == 'Switch.open') & (
@@ -105,9 +111,7 @@ def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_en
             # print ('Shunt' + str(c.m.message.reverse_differences[0]))
             for i,f in enumerate(c.m.message.reverse_differences):
                 # print ('Count shunt changes: {0} '.format(f))
-                c.post({
-                        # 'shunt_object': c.m.message.difference_mrid,
-                        'shunt_object': f['object'],
+                c.post({'shunt_object': f['object'],
                         'action': f['attribute'],
                         'timestamp': c.m.message.timestamp})
 
@@ -128,9 +132,9 @@ def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_en
                 # host.assert_fact(topic, {'mrid': 2, 'time':2})
                 # host.assert_fact(topic, {'mrid': 1, 'time':3})
                 #
-                # host.post(topic, {'mrid': 1234, 'time': 1})
-                # host.post(topic, {'mrid': 1234, 'time': 1})
-                # host.post(topic, {'mrid': 1234, 'time': 1})
+                host.post(topic, {'mrid': 1234, 'time': 1})
+                host.post(topic, {'mrid': 1234, 'time': 1})
+                host.post(topic, {'mrid': 1234, 'time': 1})
 
                 # host.post(topic, {'shunt_object': '12345', 'time': 1})
                 # host.post(topic, {'shunt_object': '12345', 'time': 1})
@@ -139,7 +143,7 @@ def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_en
                     "message" : {
                         "timestamp" : "2018-01-08T13:27:00.000Z",
                         "measurements" : [{
-                            "measurement_mrid" : "f98c9731-ca00-4372-bf41-48b5d39a0795",
+                            "measurement_mrid" : "_011451ef-0903-4cc3-83f4-ce3d2480d565",
                             "magnitude" : 1960.512425,
                             "angle" : 6912.904192
                         }]
@@ -150,14 +154,29 @@ def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_en
                     "message" : {
                         "timestamp" : "2018-01-08T13:27:00.000Z",
                         "measurements" : [{
-                            "measurement_mrid" : "f98c9731-ca00-4372-bf41-48b5d39a0795",
+                            "measurement_mrid" : "_011451ef-0903-4cc3-83f4-ce3d2480d565",
+                            "magnitude" : 4154.196028,
+                            "angle" : -4422.093355
+                        }]
+                    }
+                }
+                meas3 = {
+                    "simulation_id" : "12ae2345",
+                    "message" : {
+                        "timestamp" : "2018-01-08T13:27:00.000Z",
+                        "measurements" : [{
+                            "measurement_mrid" : "_719fcef8-6504-46c8-b752-d9f4fbd0dd7d",
+                            "magnitude" : 4154.196028,
+                            "angle" : -4422.093355
+                        },{
+                            "measurement_mrid" : "_51aefef8-35c0-46c9-ab86-69bc81fb4ebd",
                             "magnitude" : 4154.196028,
                             "angle" : -4422.093355
                         }]
                     }
                 }
                 host.post(topic, meas1)
-                host.post(topic, meas2)
+                host.post(topic, meas3)
                 diff = {"message": {"timestamp": "2018-05-21 21:05:01.964577+00:00", "reverse_differences": [
                     {"attribute": "ShuntCompensator.sections", "object": "_A5866105-A527-F682-C982-69807C0E088B",
                      "value": 0},
@@ -205,7 +224,9 @@ def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_en
     if getpass.getuser() == 'root': # Docker check
         run_all([{'host': 'redis', 'port':6379}])
     else:
-        run_all(port=port)
+        # run_all(port=port)
+        print "Run local"
+        run_all(port=5000)
 
 
 if __name__ == '__main__':
