@@ -17,7 +17,7 @@ goss.connect()
 goss_log = 'goss.gridappsd.platform.log'
 responseQueueTopic = '/temp-queue/response-queue'
 
-debug=True
+debug=False
 
 def run_rules(topic='input',port=5000, process_id=1234, run_start = "2017-07-21 12:00:00", run_end = "2017-07-22 12:00:00"):
     # print ("Start data {0} and end date {1}".format(run_start,run_end))
