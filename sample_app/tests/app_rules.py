@@ -3,12 +3,12 @@ import argparse
 import datetime
 import time
 from collections import defaultdict
-import stomp
+import os
 import json
 import math
 import getpass
 
-import gridappsd_rules
+from gridappsd_rules import gridappsd_rules
 
 from gridappsd import GOSS
 goss = GOSS()
@@ -19,26 +19,24 @@ responseQueueTopic = '/temp-queue/response-queue'
 
 debug=True
 
-def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_end = "2017-07-22 12:00:00"):
-    #2017-07-21T18:00Z 2017-07-22T18:00Z
-    print ("Start data {0} and end date {1}".format(run_start,run_end))
-
+def run_rules(topic='input',port=5000, process_id=1234, run_start = "2017-07-21 12:00:00", run_end = "2017-07-22 12:00:00"):
+    # print ("Start data {0} and end date {1}".format(run_start,run_end))
+    simulation_status_topic = "goss.gridappsd.process.simulation.log.{}".format(process_id)
+    goss_log = 'goss.gridappsd.platform.log.{}'.format(process_id)
 
     def send_log_msg(msg):
-        print ('Send log')
+        # print ('Send log')
         logMsg['logMessage'] = msg
-        now = datetime.datetime.now()
-        logMsg['timestamp'] = now.strftime("%Y-%m-%d %H:%M:%S")
         t_now = datetime.datetime.utcnow()
-        logMsg['timestamp'] = int(time.mktime(t_now.timetuple()) * 1000) + t_now.microsecond
-        # print logMsg['timestamp']
+        logMsg['timestamp'] = int(time.mktime(t_now.timetuple()) * 1000)
         logMsgStr = json.dumps(logMsg)
-        goss.send(goss_log, logMsgStr)
+        # print(logMsgStr)
+        # goss.send(goss_log, logMsgStr)
+        goss.send(simulation_status_topic, logMsgStr)
 
     logMsg = {
-        # 'id': 401,
-        'source': 'rule',
-        'processId': 'simple_app.rule',
+        'source': os.path.basename(__file__),
+        'processId': str(process_id),
         'timestamp': '2018-05-09 00:00:00',
         'logLevel': 'INFO',
         'logMessage': 'template msg',
@@ -60,12 +58,11 @@ def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_en
 
         # Check a certain mrid's measurement Voltage P.U.
         # PowerTransformer_hvmv_sub_Voltage mrids
-        transformer_voltages = {u'_11e4ede6-0dbf-494a-9950-e71058dfc599': u'PowerTransformer_hvmv_sub_Voltage_B',
+        regulator_meas = {u'_11e4ede6-0dbf-494a-9950-e71058dfc599': u'PowerTransformer_hvmv_sub_Voltage_B',
                                 u'_709c9f09-87ea-4027-969b-41050b6ef8fe': u'PowerTransformer_hvmv_sub_Voltage_A',
                                 u'_f7412f91-4ae7-4adc-8442-47756decd6f8': u'PowerTransformer_hvmv_sub_Voltage_C'}
 
-        transformer_voltages = gridappsd_rules.get_trmid()
-        print transformer_voltages.keys()
+        regulator_meas = gridappsd_rules.get_regulator_meas()
 
         @when_all(+m.message.measurements)
         def node_meas_check(c):
@@ -73,19 +70,19 @@ def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_en
             measurements = c.m.message.measurements
             # print ("Magnitude check " + str(len(measurements)) + ' ' + measurements[0]['measurement_mrid'])
             for measurements_ in c.m.message.measurements:
-                if measurements_['measurement_mrid'] in transformer_voltages.keys():
+                if measurements_['measurement_mrid'] in regulator_meas.keys():
                     mag = measurements_['magnitude']
                     ang = measurements_['angle']
                     check_voltage(c, measurements_['measurement_mrid'], mag, ang, base_kv)
 
         def check_voltage(c, mrid, mag, ang, base_kv):
             c_temp = complex(mag, ang)
-            base_kv = float(transformer_voltages[mrid]['base_voltage']) / 3
+            base_kv = float(regulator_meas[mrid]['base_voltage']) / 3
             volt_pu = (math.sqrt(c_temp.real ** 2 + c_temp.imag ** 2) / (base_kv)) / math.sqrt(3)
             # print ("Magnitude check " + str(volt_pu))
             if volt_pu < .95 or volt_pu > 1.05:
-                print (mrid + ' ' + transformer_voltages[mrid]['name'] + ' ' + transformer_voltages[mrid]['phases'] + " voltage p.u. out of threshold " + str(volt_pu) + " at " + c.m.message.timestamp)
-                send_log_msg(transformer_voltages[mrid]['name'] + " voltage p.u. out of threshold " + str(volt_pu) + " at " + c.m.message.timestamp)
+                print (mrid + ' ' + regulator_meas[mrid]['name'] + ' ' + regulator_meas[mrid]['phases'] + " voltage p.u. out of threshold " + str(volt_pu) + " at " + c.m.message.timestamp)
+                send_log_msg(regulator_meas[mrid]['name'] + " voltage p.u. out of threshold " + str(volt_pu) + " at " + c.m.message.timestamp)
 
         # A Reverse and a Forward difference is a state change.
         @when_all((m.message.reverse_difference.attribute == 'Switch.open') & (
@@ -125,8 +122,9 @@ def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_en
 
         @when_start
         def start(host):
-            print('Topic', topic)
             if debug :
+                print('Topic', topic)
+
                 # host.assert_fact(topic, {'mrid': 1, 'time':1})
                 # host.assert_fact(topic, {'mrid': 1, 'time':2})
                 # host.assert_fact(topic, {'mrid': 2, 'time':2})
@@ -143,7 +141,7 @@ def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_en
                     "message" : {
                         "timestamp" : "2018-01-08T13:27:00.000Z",
                         "measurements" : [{
-                            "measurement_mrid" : "_011451ef-0903-4cc3-83f4-ce3d2480d565",
+                            "measurement_mrid" : "_719fcef8-6504-46c8-b752-d9f4fbd0dd7d",
                             "magnitude" : 1960.512425,
                             "angle" : 6912.904192
                         }]
@@ -154,7 +152,7 @@ def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_en
                     "message" : {
                         "timestamp" : "2018-01-08T13:27:00.000Z",
                         "measurements" : [{
-                            "measurement_mrid" : "_011451ef-0903-4cc3-83f4-ce3d2480d565",
+                            "measurement_mrid" : "_719fcef8-6504-46c8-b752-d9f4fbd0dd7d",
                             "magnitude" : 4154.196028,
                             "angle" : -4422.093355
                         }]
@@ -176,6 +174,7 @@ def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_en
                     }
                 }
                 host.post(topic, meas1)
+                host.post(topic, meas2)
                 host.post(topic, meas3)
                 diff = {"message": {"timestamp": "2018-05-21 21:05:01.964577+00:00", "reverse_differences": [
                     {"attribute": "ShuntCompensator.sections", "object": "_A5866105-A527-F682-C982-69807C0E088B",
@@ -224,9 +223,8 @@ def run_rules(topic='input',port=5000, run_start = "2017-07-21 12:00:00", run_en
     if getpass.getuser() == 'root': # Docker check
         run_all([{'host': 'redis', 'port':6379}])
     else:
-        # run_all(port=port)
-        print "Run local"
-        run_all(port=5000)
+        print ("Running locally")
+        run_all(port=port)
 
 
 if __name__ == '__main__':
@@ -235,11 +233,11 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("-t","--topic", type=str, help="topic, the default is input", default="input")
     parser.add_argument("-p","--port", type=int, help="port number, the default is 5000", default=5000)
-    parser.add_argument("-i", "--id", type=int, help="simulation id")
+    parser.add_argument("-i", "--id", type=int, help="simulation id", default=1234)
     parser.add_argument("--start_date", type=str, help="Simulation start date", default="2017-07-21 12:00:00", required=False)
     parser.add_argument("--end_date", type=str, help="Simulation end date" , default="2017-07-22 12:00:00", required=False)
     # parser.add_argument('-o', '--options', type=str, default='{}')
     args = parser.parse_args()
     # options_dict = json.loads(args.options)
 
-    run_rules(topic=args.topic, port=args.port, run_start=args.start_date, run_end=args.end_date)
+    run_rules(topic=args.topic, port=args.port, process_id=args.id, run_start=args.start_date, run_end=args.end_date)

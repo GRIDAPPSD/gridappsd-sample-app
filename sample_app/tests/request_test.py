@@ -31,7 +31,7 @@ def _startTest(username,password,gossServer='localhost',stompPort='61613', simul
     goss.connect()
 
     # simulationId =123
-    simulationId = goss.get_response(goss_sim, simCfg)
+    simulationId = goss.get_response(goss_sim, simCfg, timeout=10)
     print('sent simulation request')
     time.sleep(1)
     testCfg['simulationID']=simulationId
@@ -42,7 +42,7 @@ def _startTest(username,password,gossServer='localhost',stompPort='61613', simul
     time.sleep(1)
     print('sent test request')
 
-    # goss_forward_sim.forward_sim_ouput(str(simulationId))
+    # goss_forward_sim.forward_sim_output(str(simulationId))
 
 
 if __name__ == "__main__":
