@@ -178,7 +178,7 @@ def _register_with_goss(username, password, gossServer='localhost',
     goss.subscribe(read_topic+simID, goss_listener)
     goss.subscribe(simulation_input_topic+simID,goss_listener_input)
 
-def forward_sim_ouput(simID):
+def forward_sim_output(simID):
     _register_with_goss('system','manager',gossServer='127.0.0.1',stompPort='61613',simID=simID)
     signal.signal(signal.SIGINT, signal_handler)
     _keep_alive()
