@@ -55,6 +55,8 @@ import uuid
 from gridappsd import GridAPPSD, DifferenceBuilder
 from gridappsd.topics import fncs_input_topic, fncs_output_topic
 
+message_period = 5
+
 
 class CapacitorToggler(object):
     """ A simple class that handles publishing forward and reverse differences
@@ -95,11 +97,10 @@ class CapacitorToggler(object):
         self._close_diff = DifferenceBuilder(simulation_id)
         self._publish_to_topic = fncs_input_topic(simulation_id)
         self._tmp_file = open('/tmp/sample.app.log', 'w')
-        print("Open tmpfile")
-
         for cap_mrid in capacitor_list:
             self._open_diff.add_difference(cap_mrid, "ShuntCompensator.sections", 0, 1)
             self._close_diff.add_difference(cap_mrid, "ShuntCompensator.sections", 1, 0)
+
 
     def on_message(self, headers, message):
         """ Handle incoming messages on the fncs_output_topic for the simulation_id
@@ -116,12 +117,10 @@ class CapacitorToggler(object):
         """
 
         self._message_count += 1
-        print("Message count {}".format(self._message_count))
         self._tmp_file.write("Current count: {}\n".format(self._message_count))
-
-        # Every 5th message we are going to turn the capcitors on or off depending
+        # Every message_period messages we are going to turn the capcitors on or off depending
         # on the current capacitor state.
-        if self._message_count % 5 == 0:
+        if self._message_count % message_period == 0:
             if self._last_toggle_on:
                 self._tmp_file.write("Toggle Off")
                 msg = self._close_diff.get_message()
@@ -137,9 +136,11 @@ class CapacitorToggler(object):
 
 def get_opts():
     parser = argparse.ArgumentParser()
-
     parser.add_argument("simulation_id",
                         help="Simulation id to use for responses on the message bus.")
+    parser.add_argument("message_period",
+                        help="How often the sample app will send open/close
+                        capacitor message.", default="10")
     parser.add_argument("-u", "--user", default="system",
                         help="The username to authenticate with the message bus.")
     parser.add_argument("-p", "--password", default="manager",
@@ -149,7 +150,6 @@ def get_opts():
     parser.add_argument("--port", default=61613, type=int,
                         help="the stomp port on the message bus.")
     opts = parser.parse_args()
-
     return opts
 
 
@@ -208,86 +208,27 @@ VALUES ?fdrid {"%s"}  # 8500 node
 }
 ORDER by ?name
     """ % mrid
-
-    print(query)
-
     results = gridappsd_obj.query_data(query)
     capacitors = []
     results_obj = results['data']
     for p in results_obj['results']['bindings']:
         capacitors.append(p['id']['value'])
-
     return capacitors
 
 
 def _main():
+    global message_period
     opts = get_opts()
-
     listening_to_topic = fncs_output_topic(opts.simulation_id)
-
+    message_period = int(opt.message_period)
     _8500_mird = "_4F76A5F9-271D-9EB8-5E31-AA362D86F2C3"
     gapps = GridAPPSD(opts.simulation_id)
-    # diff = Difference(opts.simulation_id)
-    #
-    # results = get_capacitors(gapps, _8500_mird)
-    # results_obj = json.loads(results['data'])
-    #
-    # message = []
-    # for p in results_obj['results']['bindings']:
-    #     cap_mrid = p["id"]["value"]
-    #     diff.add_difference(cap_mrid, "ShuntCompensator.sections", 0, 1)
-
     capacitors = get_capacitor_mrids(gapps, _8500_mird)
     toggler = CapacitorToggler(opts.simulation_id, gapps, capacitors)
     gapps.subscribe(listening_to_topic, toggler)
-
     while True:
         time.sleep(0.1)
 
 
 if __name__ == "__main__":
-
     _main()
-
-    # opts = get_opts()
-    #
-    # listening_to_topic = fncs_output_topic(opts.simulation_id)
-    # publishing_to_topic = fncs_input_topic(opts.simulation_id)
-    #
-    # _8500_mird = "_4F76A5F9-271D-9EB8-5E31-AA362D86F2C3"
-    # gapps = GridAPPSD(opts.simulation_id)
-    #
-    # platform_status = gapps.get_platform_status()
-    #
-    # diff = Difference(opts.simulation_id)
-    #
-    # results = get_capacitors(gapps, _8500_mird)
-    # results_obj = json.loads(results['data'])
-    #
-    # message = []
-    # for p in results_obj['results']['bindings']:
-    #     cap_mrid = p["id"]["value"]
-    #     diff.add_difference(cap_mrid, "ShuntCompensator.sections", 0, 1)
-    #
-    # gapps.send(publishing_to_topic, json.dumps(diff.get_message()))
-
-
-
-    #pprint(results)
-    # pprint(gapps.query_model_names())
-    # pprint(gapps.query_object_types("_4F76A5F9-271D-9EB8-5E31-AA362D86F2C3"))
-    # pprint(gapps.query_model_names("_4F76A5F9-271D-9EB8-5E31-AA362D86F2C3"))
-
-    # pprint(gapps.query_object_types())
-    # print("modelnames", gapps.query_model_names())
-    #
-    # gapps.subscribe(listening_to_topic, GOSSListener())
-    # #gapps.subscribe(list, GOSSListener())
-    #
-    # print('Listening on topic: {}'.format(listening_to_topic))
-
-    # Subscribe to simulation output
-    #connection.subscribe(fncs_input_topic(opts.simu), 1)
-    #
-    # while True:
-    #     time.sleep(0.1)
