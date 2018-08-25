@@ -138,9 +138,8 @@ def get_opts():
     parser = argparse.ArgumentParser()
     parser.add_argument("simulation_id",
                         help="Simulation id to use for responses on the message bus.")
-    parser.add_argument("message_period",
-                        help="How often the sample app will send open/close
-                        capacitor message.", default="10")
+    parser.add_argument("--message_period",
+                        help="How often the sample app will send open/close capacitor message.", default="10")
     parser.add_argument("-u", "--user", default="system",
                         help="The username to authenticate with the message bus.")
     parser.add_argument("-p", "--password", default="manager",
@@ -220,7 +219,7 @@ def _main():
     global message_period
     opts = get_opts()
     listening_to_topic = fncs_output_topic(opts.simulation_id)
-    message_period = int(opt.message_period)
+    message_period = int(opts.message_period)
     _8500_mird = "_4F76A5F9-271D-9EB8-5E31-AA362D86F2C3"
     gapps = GridAPPSD(opts.simulation_id)
     capacitors = get_capacitor_mrids(gapps, _8500_mird)
