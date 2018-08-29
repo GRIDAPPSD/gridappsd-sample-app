@@ -220,7 +220,7 @@ def run_rules(topic='input',port=5000, process_id=1234, run_start = "2017-07-21 
                                   "simulation_id": "1441855227"}
                 host.post(topic, diff)
 
-    if getpass.getuser() == 'root': # Docker check
+    if getpass.getuser() == 'root' or getpass.getuser() == 'gridappsd': # Docker check
         run_all([{'host': 'redis', 'port':6379}])
     else:
         print ("Running locally")
