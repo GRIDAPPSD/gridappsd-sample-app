@@ -63,3 +63,4 @@ The following is the recommended structure for applications working with gridapp
     
     ````
 
+Next to start the application through the viz follow the directions here: https://gridappsd.readthedocs.io/en/latest/using_gridappsd/index.html#start-gridapps-d-platform
