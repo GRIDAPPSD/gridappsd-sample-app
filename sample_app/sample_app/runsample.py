@@ -163,12 +163,7 @@ SELECT
 ?id ?fdrid WHERE {
  ?s r:type c:LinearShuntCompensator.
 # feeder selection options - if all commented out, query matches all feeders
-#VALUES ?fdrid {"_C1C3E687-6FFD-C753-582B-632A27E28507"}  # 123 bus
-#VALUES ?fdrid {"_49AD8E07-3BF9-A4E2-CB8F-C3722F837B62"}  # 13 bus
-#VALUES ?fdrid {"_5B816B93-7A5F-B64C-8460-47C17D6E4B0F"}  # 13 bus assets
-VALUES ?fdrid {"%s"}  # 8500 node
-#VALUES ?fdrid {"_67AB291F-DCCD-31B7-B499-338206B9828F"}  # J1
-#VALUES ?fdrid {"_9CE150A8-8CC5-A0F9-B67E-BBD8C79D3095"}  # R2 12.47 3
+VALUES ?fdrid {"%s"}
  ?s c:Equipment.EquipmentContainer ?fdr.
  ?fdr c:IdentifiedObject.mRID ?fdrid.
  ?s c:IdentifiedObject.name ?name.
@@ -220,9 +215,10 @@ def _main():
     opts = get_opts()
     listening_to_topic = fncs_output_topic(opts.simulation_id)
     message_period = int(opts.message_period)
-    _8500_mird = "_4F76A5F9-271D-9EB8-5E31-AA362D86F2C3"
+    sim_request = json.loads(opts.request.replace("\'",""))
+    model_mrid = sim_request["power_system_config"]["Line_name"]
     gapps = GridAPPSD(opts.simulation_id)
-    capacitors = get_capacitor_mrids(gapps, _8500_mird)
+    capacitors = get_capacitor_mrids(gapps, model_mrid)
     toggler = CapacitorToggler(opts.simulation_id, gapps, capacitors)
     gapps.subscribe(listening_to_topic, toggler)
     while True:
