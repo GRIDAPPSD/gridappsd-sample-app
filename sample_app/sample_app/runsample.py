@@ -138,6 +138,8 @@ def get_opts():
     parser = argparse.ArgumentParser()
     parser.add_argument("simulation_id",
                         help="Simulation id to use for responses on the message bus.")
+    parser.add_argument("request",
+                        help="Simulation Request")
     parser.add_argument("--message_period",
                         help="How often the sample app will send open/close capacitor message.", default="10")
     parser.add_argument("-u", "--user", default="system",
