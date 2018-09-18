@@ -134,26 +134,6 @@ class CapacitorToggler(object):
             self._tmp_file.flush()
 
 
-def get_opts():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("simulation_id",
-                        help="Simulation id to use for responses on the message bus.")
-    parser.add_argument("request",
-                        help="Simulation Request")
-    parser.add_argument("--message_period",
-                        help="How often the sample app will send open/close capacitor message.", default="10")
-    parser.add_argument("-u", "--user", default="system",
-                        help="The username to authenticate with the message bus.")
-    parser.add_argument("-p", "--password", default="manager",
-                        help="The password to authenticate with the message bus.")
-    parser.add_argument("-a", "--address", default="127.0.0.1",
-                        help="tcp address of the mesage bus.")
-    parser.add_argument("--port", default=61613, type=int,
-                        help="the stomp port on the message bus.")
-    opts = parser.parse_args()
-    return opts
-
-
 def get_capacitor_mrids(gridappsd_obj, mrid):
     query = """
     # capacitors (does not account for 2+ unequal phases on same LinearShuntCompensator) - DistCapacitor
@@ -214,7 +194,22 @@ ORDER by ?name
 
 def _main():
     global message_period
-    opts = get_opts()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("simulation_id",
+                        help="Simulation id to use for responses on the message bus.")
+    parser.add_argument("request",
+                        help="Simulation Request")
+    parser.add_argument("--message_period",
+                        help="How often the sample app will send open/close capacitor message.", default="10")
+    parser.add_argument("-u", "--user", default="system",
+                        help="The username to authenticate with the message bus.")
+    parser.add_argument("-p", "--password", default="manager",
+                        help="The password to authenticate with the message bus.")
+    parser.add_argument("-a", "--address", default="127.0.0.1",
+                        help="tcp address of the mesage bus.")
+    parser.add_argument("--port", default=61613, type=int,
+                        help="the stomp port on the message bus.")
+    opts = parser.parse_args()
     listening_to_topic = fncs_output_topic(opts.simulation_id)
     message_period = int(opts.message_period)
     sim_request = json.loads(opts.request.replace("\'",""))
