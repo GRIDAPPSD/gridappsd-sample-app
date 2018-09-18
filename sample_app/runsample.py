@@ -52,7 +52,7 @@ import stomp
 import time
 import uuid
 
-from gridappsd import GridAPPSD, DifferenceBuilder
+from gridappsd import GridAPPSD, DifferenceBuilder, utils
 from gridappsd.topics import fncs_input_topic, fncs_output_topic
 
 message_period = 5
@@ -217,10 +217,22 @@ def _main():
     opts = get_opts()
     listening_to_topic = fncs_output_topic(opts.simulation_id)
     message_period = int(opts.message_period)
+<<<<<<< Updated upstream
     sim_request = json.loads(opts.request.replace("\'",""))
     model_mrid = sim_request["power_system_config"]["Line_name"]
     gapps = GridAPPSD(opts.simulation_id)
     capacitors = get_capacitor_mrids(gapps, model_mrid)
+=======
+
+    model_id = "_4F76A5F9-271D-9EB8-5E31-AA362D86F2C3"
+    if opts.model_id:
+        model_id = opts.model_id
+    gapps = GridAPPSD(opts.simulation_id,
+                      address=utils.get_gridappsd_address(),
+                      username=utils.get_gridappsd_user(),
+                      password=utils.get_gridappsd_pass())
+    capacitors = get_capacitor_mrids(gapps, model_id)
+>>>>>>> Stashed changes
     toggler = CapacitorToggler(opts.simulation_id, gapps, capacitors)
     gapps.subscribe(listening_to_topic, toggler)
     while True:
