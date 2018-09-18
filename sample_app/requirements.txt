@@ -1,2 +1,0 @@
-# enter requirements that aren't related to connecting to the messagebus here
--e git+https://github.com/GRIDAPPSD/gridappsd-python.git#egg=gridappsd
