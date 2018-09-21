@@ -5,21 +5,44 @@
 The purpose of this repository is to document the chosen way of registering and running applications within a 
 GridAPPS-D deployment.
 
+## Requirements
+
+1. Docker ce version 17.12 or better.  You can install this via the docker_install_ubuntu.sh script.  (note for mint you will need to modify the file to work with xenial rather than ubuntu generically)
+
+## Quick Start
+
+The following procedure will use the already existing containers for the gridappsd sample application.
+
+1. Clone the gridappsd-docker repository
+    ```console
+    git clone https://github.com/GRIDAPPSD/gridappsd-docker
+    cd gridappsd-docker
+    ```
+1. Run the docker containers
+    ```console
+    ./run.sh
+    ```
+1. Once inside the container start gridappsd
+    ```console
+    ./run-gridappsd.sh
+    ```
+    
+1. Open browser to http://localhost:8080 (follow instructions https://gridappsd.readthedocs.io/en/latest/using_gridappsd/index.html to run the application)
+    
 ## Sample Application Layout
 
-The following is the recommended structure for applications working with gridappsd:
+The following is the recommended structure for an applications working with gridappsd:
 
 ```console
 .
 ├── README.md
-└── sample_app
-    ├── requirements.txt
-    ├── sample_app
-    │   └── runsample.py
-    └── sample_app.config
+├── requirements.txt
+├── sample_app
+│   └── runsample.py
+└── sample_app.config
 ```
 
-## Requirements
+# IGNORE BELOW THIS!
 
 1. Docker ce version 17.12 or better.  You can install this via the docker_install_ubuntu.sh script.  (note for mint you will need to modify the file to work with xenial rather than ubuntu generically)
 
