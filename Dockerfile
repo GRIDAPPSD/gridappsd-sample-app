@@ -4,6 +4,7 @@ FROM gridappsd/app-container-base
 
 # Pick a spot to put our application code
 # (note gridappsd-python is located at /usr/src/gridappsd-python)
+# and is already installed in the app-container-base environment.
 WORKDIR /usr/src/gridappsd-sample
 
 # Add dependencies to the requirements.txt file before
