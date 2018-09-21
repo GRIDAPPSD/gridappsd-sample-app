@@ -14,10 +14,6 @@ WORKDIR /usr/src/gridappsd-sample
 # Copy all of the source over to the container.
 COPY . .
 
-# Allow the sample_app/runsample.py script to be run directly from
-# the command line.
-RUN chmod +x sample_app/runsample.py
-
 # Use a symbolic link to the sample app rather than having to
 # mount it at run time (note can still be overriden in docker-compose file)
 RUN ln -s /usr/src/gridappsd-sample/sample_app.config /appconfig
