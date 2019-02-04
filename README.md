@@ -2,88 +2,91 @@
 
 ## Purpose
 
-The purpose of this repository is to document the chosen way of installing and/or debugging applications into the GridAPPS-D docker container.
-
-## Sample Application Layout
-
-The following is the recommended structure for applications working with gridappsd:
-
-```` bash
-.
-├── README.md
-└── sample_app
-    ├── requirements.txt
-    ├── sample_app
-    │   └── runsample.py
-    └── sample_app.config
-
-````
-
-The outer sample_app folder is a container for the sample_app.  It holds the sample_app.config file which gridappsd will use to lauch the application from inside the gridappsd container.  It should also include any 3rd party pip installable requirements for python such as numpy.  The main gridappsd python environment installs the following so need not be in your requirements files.
-
-```` python
-remote_pdb==1.2.0
-PyYaml==3.12
-stomp.py==4.1.11
-````
+The purpose of this repository is to document the chosen way of registering and running applications within a 
+GridAPPS-D deployment.
 
 ## Requirements
 
 1. Docker ce version 17.12 or better.  You can install this via the docker_install_ubuntu.sh script.  (note for mint you will need to modify the file to work with xenial rather than ubuntu generically)
 
-1. Please clone the repository <https://github.com/GRIDAPPSD/gridappsd-docker> (refered to as gridappsd-docker repository) next to this repository (they should both have the same parent folder)
+## Quick Start
 
-```` bash
+The following procedure will use the already existing containers for the gridappsd sample application.
+
+1. Clone the gridappsd-docker repository
+    ```console
+    git clone https://github.com/GRIDAPPSD/gridappsd-docker
+    cd gridappsd-docker
+    ```
+1. Run the docker containers
+    ```console
+    ./run.sh
+    ```
+1. Once inside the container start gridappsd
+    ```console
+    ./run-gridappsd.sh
+    ```
+    
+1. Open browser to http://localhost:8080 (follow instructions https://gridappsd.readthedocs.io/en/latest/using_gridappsd/index.html to run the application)
+    
+## Sample Application Layout
+
+The following is the recommended structure for an applications working with gridappsd:
+
+```console
 .
-├── gridappsd-docker
-└── gridappsd-sample-app
-````
+├── README.md
+├── requirements.txt
+├── sample_app
+│   └── runsample.py
+└── sample_app.config
+```
 
-## Adding your application
+# IGNORE BELOW THIS!
 
-In order to add your application to the container you will need to modify the docker-compose.yml file included in the gridappsd-docker repository.  Under the gridappsd service there is an example volumes leaf that is commented out.  Uncomment and modify these lines to add the path for your application and conf file.  Adding these lines will mount the application on the container's filesystem when the container is started.
+1. Docker ce version 17.12 or better.  You can install this via the docker_install_ubuntu.sh script.  (note for mint you will need to modify the file to work with xenial rather than ubuntu generically)
 
-````
-#    volumes:
-#      - ~/git/gridappsd-sample-app/sample_app:/gridappsd/applications/sample_app
-#      - ~/git/gridappsd-sample-app/sample_app/sample_app.config:/gridappsd/applications/sample_app.config
+2. Please clone the repository <https://github.com/GRIDAPPSD/gridappsd-docker> (refered to as gridappsd-docker repository) next to this repository (they should both have the same parent folder)
 
-    volumes:
-      - ~/git/[my_app_directory]/[my_app]:/gridappsd/applications/[my_app]
-      - ~/git/[my_app_directory]/[my_app]/[my_app.config]:/gridappsd/applications/[my_app.config]
+    ```console
+    git clone https://github.com/GRIDAPPSD/gridappsd-docker
+    git clone https://github.com/GRIDAPPSD/gridappsd-sample-app
+    
+    ls -l
+    
+    drwxrwxr-x  7 osboxes osboxes 4096 Sep  4 14:56 gridappsd-docker
+    drwxrwxr-x  5 osboxes osboxes 4096 Sep  4 19:06 gridappsd-sample-app
 
-````
+    ```
 
-## Debugging your python applications
+## Creating the sample-app application container
 
-### PyCharm (In Progress)
+1.  From the command line execute the following commands to build the sample-app container
 
-### PyDev (In Progress
+    ```console
+    osboxes@osboxes> cd gridappsd-sample-app
+    osboxes@osboxes> docker build --network=host -t sample-app .
+    ```
 
-### Visual Studio Code (In Progress)
+1.  Add the following to the gridappsd-docker/docker-compose.yml file
 
-### Command line
+    ```` yaml
+    sampleapp:
+      image: sample-app
+      depends_on: 
+        gridappsd    
+    ````
 
-In gridappsd we include a python package called remote_pdb.  This is the only BSD licensed product that we have found to be able to allow us to remotely debug our python based applicatoins.  To use it we need a telnet client and we need to modify the sample-applicatoin to break at a trace_point.
+1.  Run the docker application 
 
-```` python
+    ```` console
+    osboxes@osboxes> cd gridappsd-docker
+    osboxes@osboxes> ./run.sh
+    
+    # you will now be inside the container, the following starts gridappsd
+    
+    gridappsd@f4ede7dacb7d:/gridappsd$ ./run-gridappsd.sh
+    
+    ````
 
-# The container allows ports between 8001-9000 to be used as anything
-# you like.
-from remote_pdb import RemotePdb
-
-# Add the following where you would like to break within the python app.
-RemotePdb('0.0.0.0', 8888).set_trace()
-
-````
-
-Connect to the remote debugging session via telnet 
-
-```` bash
-
-telnet '127.0.0.1' 8888
-````
-
-Once connected you can use any of the pdb commands to move to the next line set other breakpoints etc.  Documentation of those commands can be found at <https://docs.python.org/2/library/pdb.html#debugger-commands>.
-
-To exit the telnet shell type 'quit' and press enter.
+Next to start the application through the viz follow the directions here: https://gridappsd.readthedocs.io/en/latest/using_gridappsd/index.html#start-gridapps-d-platform
