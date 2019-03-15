@@ -2,6 +2,11 @@
 # from the gridappsd container.
 FROM gridappsd/app-container-base
 
+# Add the TIMESTAMP variable to capture the build information from 
+# the travis docker build command and add them to the image.
+ARG TIMESTAMP
+RUN echo $TIMESTAMP > /dockerbuildversion.txt 
+
 # Pick a spot to put our application code
 # (note gridappsd-python is located at /usr/src/gridappsd-python)
 # and is already installed in the app-container-base environment.
