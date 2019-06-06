@@ -143,7 +143,7 @@ def get_capacitor_mrids(gridappsd_obj, mrid):
     query = """
     # capacitors (does not account for 2+ unequal phases on same LinearShuntCompensator) - DistCapacitor
 PREFIX r:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX c:  <http://iec.ch/TC57/2012/CIM-schema-cim17#>
+PREFIX c:  <http://iec.ch/TC57/CIM100#>
 SELECT 
 #?name ?basev ?nomu ?bsection ?bus ?conn ?grnd ?phs ?ctrlenabled ?discrete ?mode ?deadband ?setpoint ?delay ?monclass ?moneq ?monbus ?monphs 
 
@@ -177,7 +177,7 @@ VALUES ?fdrid {"%s"}
           ?ctl c:RegulatingControl.Terminal ?trm.
           ?trm c:Terminal.ConductingEquipment ?eq.
           ?eq a ?classraw.
-           bind(strafter(str(?classraw),"cim17#") as ?monclass)
+           bind(strafter(str(?classraw),"CIM100#") as ?monclass)
           ?eq c:IdentifiedObject.name ?moneq.
           ?trm c:Terminal.ConnectivityNode ?moncn.
           ?moncn c:IdentifiedObject.name ?monbus.
