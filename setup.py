@@ -37,16 +37,21 @@
 # PACIFIC NORTHWEST NATIONAL LABORATORY operated by BATTELLE for the
 # UNITED STATES DEPARTMENT OF ENERGY under Contract DE-AC05-76RL01830
 # -------------------------------------------------------------------------------
-from setuptools import setup, find_packages
+import pathlib
+from setuptools import setup
 
-__version__ = '1.0'
+from sample_app import __version__
 
-packages = find_packages('.')
+# The directory containing this file
+HERE = pathlib.Path(__file__).parent
+
+# The text of the README file
+README = (HERE / "README.md").read_text()
 
 # Setup
 setup(
     name="gridappsd",
     version=__version__,
     install_requires=['PyYaml', 'stomp.py', 'pytz'],
-    packages=packages,
+    packages=['sample_app'],
 )

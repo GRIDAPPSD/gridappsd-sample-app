@@ -1,6 +1,6 @@
 # Use the base application container to allow the application to be controlled
 # from the gridappsd container.
-FROM gridappsd/app-container-base
+FROM gridappsd/app-container-base:develop
 
 # Add the TIMESTAMP variable to capture the build information from 
 # the travis docker build command and add them to the image.
