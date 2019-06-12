@@ -52,13 +52,13 @@ import sys
 import time
 
 from gridappsd import GridAPPSD, DifferenceBuilder, utils
-from gridappsd.topics import fncs_input_topic, fncs_output_topic
+from gridappsd.topics import simulation_input_topic, simulation_output_topic, simulation_log_topic, simulation_output_topic
 
-message_period = 5
+DEFAULT_MESSAGE_PERIOD = 5
 
-logging.basicConfig(stream=sys.stdout, level=logging.DEBUG,
-                    format="%(asctime)s - %(name)s;%(levelname)s|%(message)s",
-                    datefmt="%Y-%m-%d %H:%M:%S")
+# logging.basicConfig(stream=sys.stdout, level=logging.DEBUG,
+#                     format="%(asctime)s - %(name)s;%(levelname)s|%(message)s",
+#                     datefmt="%Y-%m-%d %H:%M:%S")
 # Only log errors to the stomp logger.
 logging.getLogger('stomp.py').setLevel(logging.ERROR)
 
@@ -71,7 +71,7 @@ class CapacitorToggler(object):
     The object should be used as a callback from a GridAPPSD object so that the
     on_message function will get called each time a message from the simulator.  During
     the execution of on_meessage the `CapacitorToggler` object will publish a
-    message to the fncs_input_topic with the forward and reverse difference specified.
+    message to the simulation_input_topic with the forward and reverse difference specified.
     """
 
     def __init__(self, simulation_id, gridappsd_obj, capacitor_list):
@@ -102,14 +102,15 @@ class CapacitorToggler(object):
         self._last_toggle_on = False
         self._open_diff = DifferenceBuilder(simulation_id)
         self._close_diff = DifferenceBuilder(simulation_id)
-        self._publish_to_topic = fncs_input_topic(simulation_id)
-
+        self._publish_to_topic = simulation_input_topic(simulation_id)
+        _log.info("Building cappacitor list")
         for cap_mrid in capacitor_list:
+            _log.debug(f"Adding cap sum difference to list: {cap_mrid}")
             self._open_diff.add_difference(cap_mrid, "ShuntCompensator.sections", 0, 1)
             self._close_diff.add_difference(cap_mrid, "ShuntCompensator.sections", 1, 0)
 
     def on_message(self, headers, message):
-        """ Handle incoming messages on the fncs_output_topic for the simulation_id
+        """ Handle incoming messages on the simulation_output_topic for the simulation_id
 
         Parameters
         ----------
@@ -123,6 +124,7 @@ class CapacitorToggler(object):
         """
 
         self._message_count += 1
+        _log.debug(f"new message count is: {self._message_count}")
 
         # Every message_period messages we are going to turn the capcitors on or off depending
         # on the current capacitor state.
@@ -143,7 +145,7 @@ def get_capacitor_mrids(gridappsd_obj, mrid):
     query = """
     # capacitors (does not account for 2+ unequal phases on same LinearShuntCompensator) - DistCapacitor
 PREFIX r:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX c:  <http://iec.ch/TC57/2012/CIM-schema-cim17#>
+PREFIX c:  <http://iec.ch/TC57/CIM100#>
 SELECT 
 #?name ?basev ?nomu ?bsection ?bus ?conn ?grnd ?phs ?ctrlenabled ?discrete ?mode ?deadband ?setpoint ?delay ?monclass ?moneq ?monbus ?monphs 
 
@@ -177,7 +179,7 @@ VALUES ?fdrid {"%s"}
           ?ctl c:RegulatingControl.Terminal ?trm.
           ?trm c:Terminal.ConductingEquipment ?eq.
           ?eq a ?classraw.
-           bind(strafter(str(?classraw),"cim17#") as ?monclass)
+           bind(strafter(str(?classraw),"CIM100#") as ?monclass)
           ?eq c:IdentifiedObject.name ?moneq.
           ?trm c:Terminal.ConnectivityNode ?moncn.
           ?moncn c:IdentifiedObject.name ?monbus.
@@ -199,6 +201,7 @@ ORDER by ?name
 
 def _main():
     _log.debug("Starting application")
+    print("Application starting!!!-------------------------------------------------------")
     global message_period
     parser = argparse.ArgumentParser()
     parser.add_argument("simulation_id",
@@ -206,7 +209,8 @@ def _main():
     parser.add_argument("request",
                         help="Simulation Request")
     parser.add_argument("--message_period",
-                        help="How often the sample app will send open/close capacitor message.", default="10")
+                        help="How often the sample app will send open/close capacitor message.",
+                        default=DEFAULT_MESSAGE_PERIOD)
     # These are now set through the docker container interface via env variables or defaulted to
     # proper values.
     #
@@ -220,7 +224,7 @@ def _main():
     #                     help="the stomp port on the message bus.")
     #
     opts = parser.parse_args()
-    listening_to_topic = fncs_output_topic(opts.simulation_id)
+    listening_to_topic = simulation_output_topic(opts.simulation_id)
     message_period = int(opts.message_period)
     sim_request = json.loads(opts.request.replace("\'",""))
     model_mrid = sim_request["power_system_config"]["Line_name"]
