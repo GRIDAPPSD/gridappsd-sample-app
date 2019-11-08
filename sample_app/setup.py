@@ -50,11 +50,11 @@ import json
 import logging
 import sys
 import time
-#from top_identify import Topology
-#from get_Load import PowerData
-#from restoration_WSU import Restoration
+from top_identify import Topology
+from get_Load import PowerData
+from restoration_WSU import Restoration
 from mrid_map import SW_MRID
-#from Isolation import OpenSw
+from Isolation import OpenSw
 from model_query import MODEL_EQ
 
 
@@ -130,7 +130,65 @@ class SwitchingActions(object):
             not a requirement.
         """
 
-        print('received simulation output')
+        self._message_count += 1
+        flag_fault = 0
+        flag_event = 0
+
+        # Checking the topology everytime communicating with the platform
+        if self.flag_res == 0:
+            top = Topology(self.msr_mrids_loadsw, self.switches, message, self.TOP, self.LineData)
+            TOP, flag_event = top.curr_top()
+            self.TOP = TOP
+
+        #Locate fault
+        if flag_event == 1:
+            flag_fault, fault = top.locate_fault()
+
+        # Get consumer loads from platform
+        # Not always working so commenting it for now
+        # if self.flag_load == 0:
+        # ld = PowerData(self.msr_mrids_demand, message)
+        # ld.demand()
+        # self.flag_load = 1
+
+        # Isolate and restore the fault
+        if flag_fault == 1 and self.flag_res == 0:
+            # Isolate the fault 
+            opsw = []
+            for f in fault:
+                pr = OpenSw(f, self.LineData)
+                op = pr.fault_isolation()
+                opsw.append(op)
+            opsw = [item for sublist in opsw for item in sublist]
+            sw_o = SW_MRID(opsw, opsw, self.switches, self.LineData)
+            op_mrid = sw_o.mapping_loc()
+
+            # Fault Isolation in Platform
+            for sw_mrid in op_mrid:
+                self._open_diff.add_difference(sw_mrid, "Switch.open", 1, 0)
+                msg = self._open_diff.get_message()
+                self._gapps.send(self._publish_to_topic, json.dumps(msg))
+
+            print('Forming the optimization problem.........')
+            res = Restoration()
+            op, cl, = res.res9500(self.LineData, self.DemandData, opsw)
+            sw_oc = SW_MRID(op, cl, self.switches, self.LineData)
+            op_mrid, cl_mrid = sw_oc.mapping_res()
+            # print (op_mrid)
+            # print(cl_mrid)   
+            
+            # Now reconfiguring the test case in Platform based on obtained MRIDs
+            for sw_mrid in op_mrid:
+                self._open_diff.add_difference(sw_mrid, "Switch.open", 1, 0)
+                msg = self._open_diff.get_message()
+                self._gapps.send(self._publish_to_topic, json.dumps(msg))  
+
+            for sw_mrid in cl_mrid:
+                self._open_diff.add_difference(sw_mrid, "Switch.open", 0, 1)
+                msg = self._open_diff.get_message()
+                self._gapps.send(self._publish_to_topic, json.dumps(msg))  
+            self.flag_res = 1 
+            print('Event #1 Successfully restored......')
             
 def _main():
     _log.debug("Starting application")
