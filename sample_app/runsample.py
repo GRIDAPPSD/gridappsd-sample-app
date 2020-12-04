@@ -131,11 +131,11 @@ class CapacitorToggler(object):
         if self._message_count % message_period == 0:
             if self._last_toggle_on:
                 _log.debug("count: {} toggling off".format(self._message_count))
-                msg = self._close_diff.get_message(epoch=message['timestamp'])
+                msg = self._close_diff.get_message(epoch=message['message']['timestamp'])
                 self._last_toggle_on = False
             else:
                 _log.debug("count: {} toggling on".format(self._message_count))
-                msg = self._open_diff.get_message(epoch=message['timestamp'])
+                msg = self._open_diff.get_message(epoch=message['message']['timestamp'])
                 self._last_toggle_on = True
 
             self._gapps.send(self._publish_to_topic, json.dumps(msg))
