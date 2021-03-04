@@ -229,8 +229,7 @@ def _main():
     sim_request = json.loads(opts.request.replace("\'",""))
     model_mrid = sim_request["power_system_config"]["Line_name"]
     _log.debug("Model mrid is: {}".format(model_mrid))
-    gapps = GridAPPSD(opts.simulation_id, address=utils.get_gridappsd_address(),
-                      username=utils.get_gridappsd_user(), password=utils.get_gridappsd_pass())
+    gapps = GridAPPSD(opts.simulation_id)
     capacitors = get_capacitor_mrids(gapps, model_mrid)
     toggler = CapacitorToggler(opts.simulation_id, gapps, capacitors)
     gapps.subscribe(listening_to_topic, toggler)
