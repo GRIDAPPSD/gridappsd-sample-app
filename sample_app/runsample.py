@@ -38,204 +38,137 @@
 # UNITED STATES DEPARTMENT OF ENERGY under Contract DE-AC05-76RL01830
 # -------------------------------------------------------------------------------
 """
-Created on Jan 19, 2018
+Created on April 13, 2021
 
-@author: Craig Allwardt
-"""
+@author: Shiva Poudel
+"""""
 
-__version__ = "0.0.8"
+#from shared.sparql import SPARQLManager
+#from shared.glm import GLMManager
 
+import networkx as nx
+import pandas as pd
+import math
 import argparse
 import json
-import logging
 import sys
+import os
+import importlib
+import numpy as np
 import time
+from tabulate import tabulate
+import re
+from datetime import datetime
+# import utils
 
-from gridappsd import GridAPPSD, DifferenceBuilder, utils
-from gridappsd.topics import simulation_input_topic, simulation_output_topic, simulation_log_topic, simulation_output_topic
+from gridappsd import GridAPPSD, topics, DifferenceBuilder
+from gridappsd.topics import simulation_output_topic, simulation_log_topic, simulation_input_topic
 
-DEFAULT_MESSAGE_PERIOD = 5
+global exit_flag, simulation_id
+count = 5
 
-# logging.basicConfig(stream=sys.stdout, level=logging.DEBUG,
-#                     format="%(asctime)s - %(name)s;%(levelname)s|%(message)s",
-#                     datefmt="%Y-%m-%d %H:%M:%S")
-# Only log errors to the stomp logger.
-logging.getLogger('stomp.py').setLevel(logging.ERROR)
+def on_message(headers, message):
+    global exit_flag, simulation_id, count
+    gapps = GridAPPSD()
+    publish_to_topic = simulation_input_topic(simulation_id)
+    if type(message) == str:
+            message = json.loads(message)
 
-_log = logging.getLogger(__name__)
+    if 'message' not in message:
+        if message['processStatus']=='COMPLETE' or \
+           message['processStatus']=='CLOSED':
+            print('End of Simulation')
+            exit_flag = True
 
-
-class CapacitorToggler(object):
-    """ A simple class that handles publishing forward and reverse differences
-
-    The object should be used as a callback from a GridAPPSD object so that the
-    on_message function will get called each time a message from the simulator.  During
-    the execution of on_meessage the `CapacitorToggler` object will publish a
-    message to the simulation_input_topic with the forward and reverse difference specified.
-    """
-
-    def __init__(self, simulation_id, gridappsd_obj, capacitor_list):
-        """ Create a ``CapacitorToggler`` object
-
-        This object should be used as a subscription callback from a ``GridAPPSD``
-        object.  This class will toggle the capacitors passed to the constructor
-        off and on every five messages that are received on the ``fncs_output_topic``.
-
-        Note
-        ----
-        This class does not subscribe only publishes.
-
-        Parameters
-        ----------
-        simulation_id: str
-            The simulation_id to use for publishing to a topic.
-        gridappsd_obj: GridAPPSD
-            An instatiated object that is connected to the gridappsd message bus
-            usually this should be the same object which subscribes, but that
-            isn't required.
-        capacitor_list: list(str)
-            A list of capacitors mrids to turn on/off
-        """
-        self._gapps = gridappsd_obj
-        self._cap_list = capacitor_list
-        self._message_count = 0
-        self._last_toggle_on = False
-        self._open_diff = DifferenceBuilder(simulation_id)
-        self._close_diff = DifferenceBuilder(simulation_id)
-        self._publish_to_topic = simulation_input_topic(simulation_id)
-        _log.info("Building cappacitor list")
-        for cap_mrid in capacitor_list:
-            _log.debug(f"Adding cap sum difference to list: {cap_mrid}")
-            self._open_diff.add_difference(cap_mrid, "ShuntCompensator.sections", 0, 1)
-            self._close_diff.add_difference(cap_mrid, "ShuntCompensator.sections", 1, 0)
-
-    def on_message(self, headers, message):
-        """ Handle incoming messages on the simulation_output_topic for the simulation_id
-
-        Parameters
-        ----------
-        headers: dict
-            A dictionary of headers that could be used to determine topic of origin and
-            other attributes.
-        message: object
-            A data structure following the protocol defined in the message structure
-            of ``GridAPPSD``.  Most message payloads will be serialized dictionaries, but that is
-            not a requirement.
-        """
-
-        self._message_count += 1
-        _log.debug(f"new message count is: {self._message_count}")
-
-        # Every message_period messages we are going to turn the capcitors on or off depending
-        # on the current capacitor state.
-        if self._message_count % message_period == 0:
-            if self._last_toggle_on:
-                _log.debug("count: {} toggling off".format(self._message_count))
-                msg = self._close_diff.get_message(epoch=message['message']['timestamp'])
-                self._last_toggle_on = False
-            else:
-                _log.debug("count: {} toggling on".format(self._message_count))
-                msg = self._open_diff.get_message(epoch=message['message']['timestamp'])
-                self._last_toggle_on = True
-
-            self._gapps.send(self._publish_to_topic, json.dumps(msg))
-
-
-def get_capacitor_mrids(gridappsd_obj, mrid):
-    query = """
-    # capacitors (does not account for 2+ unequal phases on same LinearShuntCompensator) - DistCapacitor
-PREFIX r:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX c:  <http://iec.ch/TC57/CIM100#>
-SELECT 
-#?name ?basev ?nomu ?bsection ?bus ?conn ?grnd ?phs ?ctrlenabled ?discrete ?mode ?deadband ?setpoint ?delay ?monclass ?moneq ?monbus ?monphs 
-
-?id ?fdrid WHERE {
- ?s r:type c:LinearShuntCompensator.
-# feeder selection options - if all commented out, query matches all feeders
-VALUES ?fdrid {"%s"}
- ?s c:Equipment.EquipmentContainer ?fdr.
- ?fdr c:IdentifiedObject.mRID ?fdrid.
- ?s c:IdentifiedObject.name ?name.
- ?s c:ConductingEquipment.BaseVoltage ?bv.
- ?bv c:BaseVoltage.nominalVoltage ?basev.
- ?s c:ShuntCompensator.nomU ?nomu. 
- ?s c:LinearShuntCompensator.bPerSection ?bsection. 
- ?s c:ShuntCompensator.phaseConnection ?connraw.
-   bind(strafter(str(?connraw),"PhaseShuntConnectionKind.") as ?conn)
- ?s c:ShuntCompensator.grounded ?grnd.
- OPTIONAL {?scp c:ShuntCompensatorPhase.ShuntCompensator ?s.
- ?scp c:ShuntCompensatorPhase.phase ?phsraw.
-   bind(strafter(str(?phsraw),"SinglePhaseKind.") as ?phs) }
- OPTIONAL {?ctl c:RegulatingControl.RegulatingCondEq ?s.
-          ?ctl c:RegulatingControl.discrete ?discrete.
-          ?ctl c:RegulatingControl.enabled ?ctrlenabled.
-          ?ctl c:RegulatingControl.mode ?moderaw.
-           bind(strafter(str(?moderaw),"RegulatingControlModeKind.") as ?mode)
-          ?ctl c:RegulatingControl.monitoredPhase ?monraw.
-           bind(strafter(str(?monraw),"PhaseCode.") as ?monphs)
-          ?ctl c:RegulatingControl.targetDeadband ?deadband.
-          ?ctl c:RegulatingControl.targetValue ?setpoint.
-          ?s c:ShuntCompensator.aVRDelay ?delay.
-          ?ctl c:RegulatingControl.Terminal ?trm.
-          ?trm c:Terminal.ConductingEquipment ?eq.
-          ?eq a ?classraw.
-           bind(strafter(str(?classraw),"CIM100#") as ?monclass)
-          ?eq c:IdentifiedObject.name ?moneq.
-          ?trm c:Terminal.ConnectivityNode ?moncn.
-          ?moncn c:IdentifiedObject.name ?monbus.
-          }
- ?s c:IdentifiedObject.mRID ?id. 
- ?t c:Terminal.ConductingEquipment ?s.
- ?t c:Terminal.ConnectivityNode ?cn. 
- ?cn c:IdentifiedObject.name ?bus
-}
-ORDER by ?name
-    """ % mrid
-    results = gridappsd_obj.query_data(query)
-    capacitors = []
-    results_obj = results['data']
-    for p in results_obj['results']['bindings']:
-        capacitors.append(p['id']['value'])
-    return capacitors
+    else:
+        meas_data = message["message"]["measurements"]
+        timestamp = message["message"]["timestamp"] 
+        count += 1
+        if count >= 5 :            
+            ochre_diff = DifferenceBuilder(simulation_id)
+            house_name = 'House_n1'
+            forward = {
+            'Sol_status_CVXPY__Dimensionless': 1,
+            'HVAC Heating': {'Heating Setpoint': 19},  # , 'ER Duty Cycle': 0.1},
+            'HVAC Cooling': {'Cooling Duty Cycle': 0.0},
+            'Heat Pump Water Heater': {'HP Duty Cycle': 0.0, 'ER Duty Cycle': 0.0},
+            'PV': {'P Setpoint': -1.1, 'Q Setpoint': 0.5},
+            'Battery': {'P Setpoint': -1.0},
+            'Load Fractions': {
+                'Air Source Heat Pump': 1,
+                'Heat Pump Water Heater': 0,
+                'Electric Resistance Water Heater': 0,
+                'Scheduled EV': 0,
+                'Lighting': 0.2,
+                'Exterior Lighting': 0.0,
+                'Range': 0.0,
+                'Dishwasher': 0.0,
+                'Refrigerator': 1.0,
+                'Clothes Washer': 0.0,
+                'Clothes Dryer': 0.0,
+                'MELs': 0.2,
+                }
+            }
+            ochre_diff.add_difference(house_name, "Ochre.command", json.dumps(forward), "")
+            msg = ochre_diff.get_message()
+            print(msg)
+            # gapps.send(publish_to_topic, json.dumps(msg))      
 
 
 def _main():
-    _log.debug("Starting application")
-    print("Application starting!!!-------------------------------------------------------")
-    global message_period
-    parser = argparse.ArgumentParser()
-    parser.add_argument("simulation_id",
-                        help="Simulation id to use for responses on the message bus.")
-    parser.add_argument("request",
-                        help="Simulation Request")
-    parser.add_argument("--message_period",
-                        help="How often the sample app will send open/close capacitor message.",
-                        default=DEFAULT_MESSAGE_PERIOD)
-    # These are now set through the docker container interface via env variables or defaulted to
-    # proper values.
-    #
-    # parser.add_argument("-u", "--user", default="system",
-    #                     help="The username to authenticate with the message bus.")
-    # parser.add_argument("-p", "--password", default="manager",
-    #                     help="The password to authenticate with the message bus.")
-    # parser.add_argument("-a", "--address", default="127.0.0.1",
-    #                     help="tcp address of the mesage bus.")
-    # parser.add_argument("--port", default=61613, type=int,
-    #                     help="the stomp port on the message bus.")
-    #
-    opts = parser.parse_args()
-    listening_to_topic = simulation_output_topic(opts.simulation_id)
-    message_period = int(opts.message_period)
-    sim_request = json.loads(opts.request.replace("\'",""))
-    model_mrid = sim_request["power_system_config"]["Line_name"]
-    _log.debug("Model mrid is: {}".format(model_mrid))
-    gapps = GridAPPSD(opts.simulation_id)
-    capacitors = get_capacitor_mrids(gapps, model_mrid)
-    toggler = CapacitorToggler(opts.simulation_id, gapps, capacitors)
-    gapps.subscribe(listening_to_topic, toggler)
-    while True:
-        time.sleep(0.1)
+    
+    global simulation_id
+    simulation_id = sys.argv[2]
+    feeder_mrid = sys.argv[1]
 
+    # This topic is different for different API
+    model_api_topic = "goss.gridappsd.process.request.data.powergridmodel"
+
+    gapps = GridAPPSD()
+
+    config_topic = "goss.gridappsd.process.request.config"
+    
+    sim_output_topic = simulation_output_topic(simulation_id)
+    publish_to_topic = simulation_input_topic(simulation_id)
+    # following function allows us to subscribe the simulation output
+    # Need a call back function
+
+    ochre_diff = DifferenceBuilder(simulation_id)
+    house_name = 'House_n1'
+    forward = {
+    'Sol_status_CVXPY__Dimensionless': 1,
+    'HVAC Heating': {'Heating Setpoint': 19},  # , 'ER Duty Cycle': 0.1},
+    'HVAC Cooling': {'Cooling Duty Cycle': 0.0},
+    'Heat Pump Water Heater': {'HP Duty Cycle': 0.0, 'ER Duty Cycle': 0.0},
+    'PV': {'P Setpoint': -1.1, 'Q Setpoint': 0.5},
+    'Battery': {'P Setpoint': -1.0},
+    'Load Fractions': {
+        'Air Source Heat Pump': 1,
+        'Heat Pump Water Heater': 0,
+        'Electric Resistance Water Heater': 0,
+        'Scheduled EV': 0,
+        'Lighting': 0.2,
+        'Exterior Lighting': 0.0,
+        'Range': 0.0,
+        'Dishwasher': 0.0,
+        'Refrigerator': 1.0,
+        'Clothes Washer': 0.0,
+        'Clothes Dryer': 0.0,
+        'MELs': 0.2,
+        }
+    }
+    ochre_diff.add_difference(house_name, "Ochre.command", json.dumps(forward), "")
+    msg = ochre_diff.get_message()
+    print(json.dumps(msg))
+    gapps.send(publish_to_topic, json.dumps(msg)) 
+    # gapps.subscribe(sim_output_topic, on_message)
+
+    global exit_flag
+    exit_flag = False
+
+    while not exit_flag:
+        time.sleep(0.1)
+    
 
 if __name__ == "__main__":
     _main()
