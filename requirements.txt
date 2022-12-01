@@ -1,6 +1,7 @@
 # enter requirements that aren't related to connecting to the messagebus here
--e git+https://github.com/GRIDAPPSD/gridappsd-python.git#egg=gridappsd
-
-stomp.py==4.1.20
-PyYAML==3.12
-pytz==2018.4
+PyYAML==5.3
+pytz==2019.3
+stomp-py==6.0.0
+pandas
+numpy
+-e git+https://github.com/GRIDAPPSD/gridappsd-python.git@develop#egg=gridappsd-python
