@@ -48,69 +48,57 @@ __version__ = "0.0.8"
 import argparse
 import json
 import logging
-import sys
 import time
 
-from gridappsd import GridAPPSD, DifferenceBuilder, utils
-from gridappsd.topics import simulation_input_topic, simulation_output_topic, simulation_log_topic, simulation_output_topic
+from gridappsd import GridAPPSD, DifferenceBuilder
+import gridappsd.topics as t
 
-DEFAULT_MESSAGE_PERIOD = 5
 
-# logging.basicConfig(stream=sys.stdout, level=logging.DEBUG,
-#                     format="%(asctime)s - %(name)s;%(levelname)s|%(message)s",
-#                     datefmt="%Y-%m-%d %H:%M:%S")
-# Only log errors to the stomp logger.
+logging.basicConfig(level=logging.DEBUG)
 logging.getLogger('stomp.py').setLevel(logging.ERROR)
-
 _log = logging.getLogger(__name__)
 
+#TODO: remove simulation_id after updating GridAPPS-D API
+simulation_id = 'field_data'
 
-class CapacitorToggler(object):
+class Toggler(object):
     """ A simple class that handles publishing forward and reverse differences
 
     The object should be used as a callback from a GridAPPSD object so that the
     on_message function will get called each time a message from the simulator.  During
-    the execution of on_meessage the `CapacitorToggler` object will publish a
+    the execution of on_meessage the `Toggler` object will publish a
     message to the simulation_input_topic with the forward and reverse difference specified.
     """
 
-    def __init__(self, simulation_id, gridappsd_obj, capacitor_list):
-        """ Create a ``CapacitorToggler`` object
+    def __init__(self, gridappsd_obj, object_list):
+        """ Create a ``Toggler`` object
 
         This object should be used as a subscription callback from a ``GridAPPSD``
-        object.  This class will toggle the capacitors passed to the constructor
-        off and on every five messages that are received on the ``fncs_output_topic``.
-
-        Note
-        ----
-        This class does not subscribe only publishes.
+        object.  This class will toggle the objects passed to the constructor
+        off and on for every message that is received on the ``field_output_topic``.
 
         Parameters
         ----------
-        simulation_id: str
-            The simulation_id to use for publishing to a topic.
         gridappsd_obj: GridAPPSD
             An instatiated object that is connected to the gridappsd message bus
             usually this should be the same object which subscribes, but that
             isn't required.
-        capacitor_list: list(str)
-            A list of capacitors mrids to turn on/off
+        object_list: list(str)
+            A list of mrids to turn on/off
         """
         self._gapps = gridappsd_obj
-        self._cap_list = capacitor_list
-        self._message_count = 0
+        self._object_list = object_list
         self._last_toggle_on = False
         self._open_diff = DifferenceBuilder(simulation_id)
         self._close_diff = DifferenceBuilder(simulation_id)
-        self._publish_to_topic = simulation_input_topic(simulation_id)
-        _log.info("Building cappacitor list")
-        for cap_mrid in capacitor_list:
-            _log.debug(f"Adding cap sum difference to list: {cap_mrid}")
-            self._open_diff.add_difference(cap_mrid, "ShuntCompensator.sections", 0, 1)
-            self._close_diff.add_difference(cap_mrid, "ShuntCompensator.sections", 1, 0)
+        self._publish_to_topic = t.field_input_topic()
+        for obj_mrid in object_list:
+            _log.debug(f"Adding list: {obj_mrid}")
+            self._open_diff.add_difference(obj_mrid, "Switch.open", 0, 1)
+            self._close_diff.add_difference(obj_mrid, "Switch.open", 1, 0)
 
     def on_message(self, headers, message):
-        """ Handle incoming messages on the simulation_output_topic for the simulation_id
+        """ Handle incoming messages on the field_output_topic
 
         Parameters
         ----------
@@ -123,116 +111,44 @@ class CapacitorToggler(object):
             not a requirement.
         """
 
-        self._message_count += 1
-        _log.debug(f"new message count is: {self._message_count}")
+        if self._last_toggle_on:
+            _log.debug("toggling off")
+            msg = self._close_diff.get_message(epoch=message['message']['timestamp'])
+            self._last_toggle_on = False
+        else:
+            _log.debug("toggling on")
+            msg = self._open_diff.get_message(epoch=message['message']['timestamp'])
+            self._last_toggle_on = True
 
-        # Every message_period messages we are going to turn the capcitors on or off depending
-        # on the current capacitor state.
-        if self._message_count % message_period == 0:
-            if self._last_toggle_on:
-                _log.debug("count: {} toggling off".format(self._message_count))
-                msg = self._close_diff.get_message(epoch=message['message']['timestamp'])
-                self._last_toggle_on = False
-            else:
-                _log.debug("count: {} toggling on".format(self._message_count))
-                msg = self._open_diff.get_message(epoch=message['message']['timestamp'])
-                self._last_toggle_on = True
+        self._gapps.send(self._publish_to_topic, json.dumps(msg))
 
-            self._gapps.send(self._publish_to_topic, json.dumps(msg))
-
-
-def get_capacitor_mrids(gridappsd_obj, mrid):
-    query = """
-    # capacitors (does not account for 2+ unequal phases on same LinearShuntCompensator) - DistCapacitor
-PREFIX r:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX c:  <http://iec.ch/TC57/CIM100#>
-SELECT 
-#?name ?basev ?nomu ?bsection ?bus ?conn ?grnd ?phs ?ctrlenabled ?discrete ?mode ?deadband ?setpoint ?delay ?monclass ?moneq ?monbus ?monphs 
-
-?id ?fdrid WHERE {
- ?s r:type c:LinearShuntCompensator.
-# feeder selection options - if all commented out, query matches all feeders
-VALUES ?fdrid {"%s"}
- ?s c:Equipment.EquipmentContainer ?fdr.
- ?fdr c:IdentifiedObject.mRID ?fdrid.
- ?s c:IdentifiedObject.name ?name.
- ?s c:ConductingEquipment.BaseVoltage ?bv.
- ?bv c:BaseVoltage.nominalVoltage ?basev.
- ?s c:ShuntCompensator.nomU ?nomu. 
- ?s c:LinearShuntCompensator.bPerSection ?bsection. 
- ?s c:ShuntCompensator.phaseConnection ?connraw.
-   bind(strafter(str(?connraw),"PhaseShuntConnectionKind.") as ?conn)
- ?s c:ShuntCompensator.grounded ?grnd.
- OPTIONAL {?scp c:ShuntCompensatorPhase.ShuntCompensator ?s.
- ?scp c:ShuntCompensatorPhase.phase ?phsraw.
-   bind(strafter(str(?phsraw),"SinglePhaseKind.") as ?phs) }
- OPTIONAL {?ctl c:RegulatingControl.RegulatingCondEq ?s.
-          ?ctl c:RegulatingControl.discrete ?discrete.
-          ?ctl c:RegulatingControl.enabled ?ctrlenabled.
-          ?ctl c:RegulatingControl.mode ?moderaw.
-           bind(strafter(str(?moderaw),"RegulatingControlModeKind.") as ?mode)
-          ?ctl c:RegulatingControl.monitoredPhase ?monraw.
-           bind(strafter(str(?monraw),"PhaseCode.") as ?monphs)
-          ?ctl c:RegulatingControl.targetDeadband ?deadband.
-          ?ctl c:RegulatingControl.targetValue ?setpoint.
-          ?s c:ShuntCompensator.aVRDelay ?delay.
-          ?ctl c:RegulatingControl.Terminal ?trm.
-          ?trm c:Terminal.ConductingEquipment ?eq.
-          ?eq a ?classraw.
-           bind(strafter(str(?classraw),"CIM100#") as ?monclass)
-          ?eq c:IdentifiedObject.name ?moneq.
-          ?trm c:Terminal.ConnectivityNode ?moncn.
-          ?moncn c:IdentifiedObject.name ?monbus.
-          }
- ?s c:IdentifiedObject.mRID ?id. 
- ?t c:Terminal.ConductingEquipment ?s.
- ?t c:Terminal.ConnectivityNode ?cn. 
- ?cn c:IdentifiedObject.name ?bus
-}
-ORDER by ?name
-    """ % mrid
-    results = gridappsd_obj.query_data(query)
-    capacitors = []
-    results_obj = results['data']
-    for p in results_obj['results']['bindings']:
-        capacitors.append(p['id']['value'])
-    return capacitors
+def get_object_mrids(gridappsd_obj, model_mrid):
+    
+    object_list = []
+    response = gridappsd_obj.query_object_dictionary(model_mrid, object_type='LoadBreakSwitch')
+    for objects in response['data']:
+        object_list.append(objects['id'])
+    return object_list
 
 
 def _main():
     _log.debug("Starting application")
-    print("Application starting!!!-------------------------------------------------------")
-    global message_period
-    parser = argparse.ArgumentParser()
-    parser.add_argument("simulation_id",
-                        help="Simulation id to use for responses on the message bus.")
+    
+    '''parser = argparse.ArgumentParser()
     parser.add_argument("request",
                         help="Simulation Request")
-    parser.add_argument("--message_period",
-                        help="How often the sample app will send open/close capacitor message.",
-                        default=DEFAULT_MESSAGE_PERIOD)
-    # These are now set through the docker container interface via env variables or defaulted to
-    # proper values.
-    #
-    # parser.add_argument("-u", "--user", default="system",
-    #                     help="The username to authenticate with the message bus.")
-    # parser.add_argument("-p", "--password", default="manager",
-    #                     help="The password to authenticate with the message bus.")
-    # parser.add_argument("-a", "--address", default="127.0.0.1",
-    #                     help="tcp address of the mesage bus.")
-    # parser.add_argument("--port", default=61613, type=int,
-    #                     help="the stomp port on the message bus.")
-    #
     opts = parser.parse_args()
-    listening_to_topic = simulation_output_topic(opts.simulation_id)
-    message_period = int(opts.message_period)
+    
     sim_request = json.loads(opts.request.replace("\'",""))
-    model_mrid = sim_request["power_system_config"]["Line_name"]
-    _log.debug("Model mrid is: {}".format(model_mrid))
-    gapps = GridAPPSD(opts.simulation_id)
-    capacitors = get_capacitor_mrids(gapps, model_mrid)
-    toggler = CapacitorToggler(opts.simulation_id, gapps, capacitors)
-    gapps.subscribe(listening_to_topic, toggler)
+    model_mrid = sim_request["power_system_config"]["Line_name"]'''
+    
+    model_mrid = '_C1C3E687-6FFD-C753-582B-632A27E28507'
+    
+    field_output_topic = t.field_output_topic()
+    gapps = GridAPPSD()
+    objects = get_object_mrids(gapps, model_mrid)
+    toggler = Toggler(gapps, objects)
+    gapps.subscribe(field_output_topic, toggler)
     while True:
         time.sleep(0.1)
 
