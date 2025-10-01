@@ -74,7 +74,7 @@ class CapacitorToggler(object):
     message to the simulation_input_topic with the forward and reverse difference specified.
     """
 
-    def __init__(self, simulation_id, gridappsd_obj, capacitor_list):
+    def __init__(self, simulation_id, gridappsd_obj, capacitor_list, model_mrid):
         """ Create a ``CapacitorToggler`` object
 
         This object should be used as a subscription callback from a ``GridAPPSD``
@@ -98,6 +98,7 @@ class CapacitorToggler(object):
         """
         self._gapps = gridappsd_obj
         self._cap_list = capacitor_list
+        self._model_mrid = model_mrid
         self._message_count = 0
         self._last_toggle_on = False
         self._open_diff = DifferenceBuilder(simulation_id)
@@ -227,11 +228,11 @@ def _main():
     listening_to_topic = simulation_output_topic(opts.simulation_id)
     message_period = int(opts.message_period)
     sim_request = json.loads(opts.request.replace("\'",""))
-    model_mrid = sim_request["power_system_config"]["Line_name"]
+    model_mrid = sim_request["power_system_configs"][0]["Line_name"]
     _log.debug("Model mrid is: {}".format(model_mrid))
     gapps = GridAPPSD(opts.simulation_id)
     capacitors = get_capacitor_mrids(gapps, model_mrid)
-    toggler = CapacitorToggler(opts.simulation_id, gapps, capacitors)
+    toggler = CapacitorToggler(opts.simulation_id, gapps, capacitors, model_mrid)
     gapps.subscribe(listening_to_topic, toggler)
     while True:
         time.sleep(0.1)
